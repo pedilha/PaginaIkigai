@@ -349,16 +349,23 @@ select { appearance: none; }
 }
 
 @media (max-width: 768px) {
-  .sticky-gallery { grid-template-columns: 1fr 1fr; }
-  .sticky-gallery__col--sticky {
-    position: relative; height: auto;
-    grid-template-rows: auto;
+  .sticky-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
-  .sticky-gallery__fig--tall { height: clamp(200px, 35vh, 300px); }
+  .sticky-gallery__col:nth-child(1) { order: 1; }
+  .sticky-gallery__col--sticky {
+    order: 2;
+    position: sticky; top: 0; height: 100vh;
+    grid-template-rows: 1fr 1fr;
+  }
+  .sticky-gallery__col:nth-child(3) { display: none; }
+  .sticky-gallery__col--scroll .sticky-gallery__fig { height: clamp(220px, 35vh, 300px); }
+  .sticky-gallery__fig--tall { height: 100%; }
 }
 @media (max-width: 480px) {
-  .sticky-gallery { grid-template-columns: 1fr; }
-  .sticky-gallery__col--scroll .sticky-gallery__fig { height: 250px; }
+  .sticky-gallery__col--scroll .sticky-gallery__fig { height: clamp(180px, 30vh, 260px); }
+  .sticky-gallery__fig--tall .sticky-gallery__placeholder { min-height: 140px; }
 }
 
 /* ===== PORTFOLIO (horizontal scroll — legacy) ===== */
