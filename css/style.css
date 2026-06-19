@@ -307,7 +307,61 @@ select { appearance: none; }
 .service-item__arrow svg { width: 18px; height: 18px; stroke: var(--text-muted); stroke-width: 2; transition: stroke 0.3s var(--ease-smooth); }
 .service-item:hover .service-item__arrow svg { stroke: var(--dark); }
 
-/* ===== PORTFOLIO ===== */
+/* ===== STICKY SCROLL GALLERY ===== */
+.sticky-gallery {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px; padding-inline: var(--space-md);
+  max-width: var(--max-w); margin-inline: auto;
+}
+.sticky-gallery__col { display: grid; gap: 8px; }
+.sticky-gallery__col--sticky {
+  position: sticky; top: 0; height: 100vh;
+  align-content: stretch;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.sticky-gallery__fig {
+  margin: 0; border-radius: var(--r-md); overflow: hidden;
+  position: relative;
+}
+.sticky-gallery__col--scroll .sticky-gallery__fig {
+  height: clamp(280px, 40vh, 384px);
+}
+.sticky-gallery__fig--tall {
+  height: 100%;
+}
+.sticky-gallery__fig img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+.sticky-gallery__fig:hover img { transform: scale(1.04); }
+.sticky-gallery__placeholder {
+  width: 100%; height: 100%; min-height: 200px;
+  background: var(--dark-card); border: 1px solid var(--border-dark);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: var(--text-sm); text-align: center;
+  flex-direction: column; gap: 0.25rem;
+  transition: border-color 0.3s var(--ease-smooth);
+}
+.sticky-gallery__placeholder:hover { border-color: var(--orange); }
+.sticky-gallery__placeholder small {
+  font-size: var(--text-xs); opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .sticky-gallery { grid-template-columns: 1fr 1fr; }
+  .sticky-gallery__col--sticky {
+    position: relative; height: auto;
+    grid-template-rows: auto;
+  }
+  .sticky-gallery__fig--tall { height: clamp(200px, 35vh, 300px); }
+}
+@media (max-width: 480px) {
+  .sticky-gallery { grid-template-columns: 1fr; }
+  .sticky-gallery__col--scroll .sticky-gallery__fig { height: 250px; }
+}
+
+/* ===== PORTFOLIO (horizontal scroll — legacy) ===== */
 .portfolio-scroll {
   overflow-x: auto; overflow-y: hidden; scrollbar-width: thin;
   scrollbar-color: var(--orange) oklch(0.2 0.005 50);
