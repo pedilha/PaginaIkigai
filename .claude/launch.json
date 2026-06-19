@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ikigai",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "C:/dev/Pagina_Ikigai", "-p", "3000", "-c-1"],
+      "port": 3000
+    }
+  ]
+}
