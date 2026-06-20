@@ -16,10 +16,15 @@
 
   async function loadTranslations(lang) {
     if (cache[lang]) return cache[lang];
-    const res = await fetch(`i18n/${lang}.json`);
-    if (!res.ok) return null;
-    cache[lang] = await res.json();
-    return cache[lang];
+    try {
+      const base = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+      const res = await fetch(base + 'i18n/' + lang + '.json');
+      if (!res.ok) return null;
+      cache[lang] = await res.json();
+      return cache[lang];
+    } catch {
+      return null;
+    }
   }
 
   function applyTranslations(translations) {
@@ -36,7 +41,9 @@
       }
     });
 
-    document.documentElement.lang = getSavedLang();
+    if (window.__ikigaiWrapHeadline) window.__ikigaiWrapHeadline(false);
+
+    document.documentElement.lang = getSavedLang() === 'pt' ? 'pt-BR' : getSavedLang();
   }
 
   function updateSwitcher(lang) {
@@ -56,16 +63,11 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
-    const lang = getSavedLang();
-
     document.querySelectorAll('.lang-switch__btn').forEach(btn => {
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
 
-    if (lang !== DEFAULT_LANG) {
-      await setLang(lang);
-    } else {
-      updateSwitcher(lang);
-    }
+    const lang = getSavedLang();
+    await setLang(lang);
   });
 })();

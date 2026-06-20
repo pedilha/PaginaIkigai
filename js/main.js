@@ -39,14 +39,25 @@
   }
 
   // ===== HERO WORD ANIMATION =====
-  const headline = document.querySelector('.hero__headline');
-  if (headline && !prefersReducedMotion) {
-    const raw = headline.innerHTML;
-    headline.innerHTML = raw.replace(/(<em>.*?<\/em>|\S+)/g, '<span class="word">$1</span>');
-    headline.querySelectorAll('.word').forEach((w, i) =>
-      setTimeout(() => w.classList.add('visible'), 150 + i * 70)
-    );
+  let firstHeadlineWrap = true;
 
+  window.__ikigaiWrapHeadline = function() {
+    const h = document.querySelector('.hero__headline');
+    if (!h || prefersReducedMotion) return;
+    const raw = h.textContent;
+    const animate = firstHeadlineWrap;
+    firstHeadlineWrap = false;
+    h.innerHTML = raw.replace(/(\S+)/g, (m) =>
+      '<span class="word' + (animate ? '' : ' visible') + '">' + m + '</span>'
+    );
+    if (animate) {
+      h.querySelectorAll('.word').forEach((w, i) =>
+        setTimeout(() => w.classList.add('visible'), 150 + i * 70)
+      );
+    }
+  };
+
+  if (!prefersReducedMotion) {
     ['.hero__sub', '.hero__cta'].forEach((sel, i) => {
       const el = document.querySelector(sel);
       if (!el) return;

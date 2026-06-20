@@ -77,6 +77,11 @@
     <a href="quem-somos.html" data-i18n="nav.about">Quem Somos</a>
     <a href="servicos.html" data-i18n="nav.services">Serviços</a>
     <a href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="lang-switch" style="margin-top: var(--space-sm);">
+      <button class="lang-switch__btn active" data-lang="pt">PT</button>
+      <button class="lang-switch__btn" data-lang="en">EN</button>
+      <button class="lang-switch__btn" data-lang="it">IT</button>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -108,14 +113,14 @@
   </section>
 
   <!-- SERVIÇOS -->
-  <section class="section section--surface" style="padding-block: var(--space-2xl);">
+  <section class="section section--surface section--services">
     <div class="container">
       <div class="services-header reveal">
         <p class="section-label" data-i18n="services.label">O que fazemos</p>
         <h2 class="section-title" data-i18n="services.title">Nossos Serviços</h2>
       </div>
 
-      <div class="services-list" style="margin-top: var(--space-xl);">
+      <div class="services-list">
 
         <a href="servicos.html" class="service-item reveal">
           <span class="service-item__num">
@@ -311,7 +316,7 @@
         <button class="fan__btn" data-fan-dir="left" aria-label="Anterior">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <div class="fan__dots"></div>
+        <div class="fan__dots" role="tablist" aria-label="Indicador de depoimentos"></div>
         <button class="fan__btn" data-fan-dir="right" aria-label="Próximo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
@@ -323,33 +328,33 @@
   <section class="marquee-section section--dark" aria-label="Lema da agência">
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span class="marquee__item">Olhar para fora da janela</span>
+        <span class="marquee__item" data-i18n="marquee.1">Olhar para fora da janela</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--italic">Criar com autenticidade</span>
+        <span class="marquee__item marquee__item--italic" data-i18n="marquee.2">Criar com autenticidade</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item">Impactar com propósito</span>
+        <span class="marquee__item" data-i18n="marquee.3">Impactar com propósito</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--italic">Olhar para fora da janela</span>
+        <span class="marquee__item marquee__item--italic" data-i18n="marquee.1">Olhar para fora da janela</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item">Criar com autenticidade</span>
+        <span class="marquee__item" data-i18n="marquee.2">Criar com autenticidade</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--italic">Impactar com propósito</span>
+        <span class="marquee__item marquee__item--italic" data-i18n="marquee.3">Impactar com propósito</span>
         <span class="marquee__sep"></span>
       </div>
     </div>
     <div class="marquee marquee--reverse" aria-hidden="true">
       <div class="marquee__track">
-        <span class="marquee__item marquee__item--outline">Propósito</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k1">Propósito</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--outline">Autenticidade</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k2">Autenticidade</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--outline">Narrativa</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k3">Narrativa</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--outline">Propósito</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k1">Propósito</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--outline">Autenticidade</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k2">Autenticidade</span>
         <span class="marquee__sep"></span>
-        <span class="marquee__item marquee__item--outline">Narrativa</span>
+        <span class="marquee__item marquee__item--outline" data-i18n="marquee.k3">Narrativa</span>
         <span class="marquee__sep"></span>
       </div>
     </div>
@@ -388,12 +393,12 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span data-i18n="footer.rights">&copy; 2026 Agência Ikigai. Todos os direitos reservados.</span>
+      <span data-i18n="footer.rights">&copy; <script>document.write(new Date().getFullYear())</script> Agência Ikigai. Todos os direitos reservados.</span>
       <span data-i18n="footer.made">Feito com propósito.</span>
     </div>
   </footer>
 
-  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
