@@ -95,6 +95,11 @@
         <a href="contato.html" class="btn btn--outline">Solicite um orçamento</a>
       </div>
     </div>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-text">Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
   </section>
 
   <!-- SERVIÇOS -->
@@ -108,7 +113,10 @@
       <div class="services-list" style="margin-top: var(--space-xl);">
 
         <a href="servicos.html" class="service-item reveal">
-          <span class="service-item__num">01</span>
+          <span class="service-item__num">
+            <svg class="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2H7a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5z"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+            01
+          </span>
           <div class="service-item__body">
             <h3 class="service-item__name">Gerenciamento de Redes Sociais</h3>
             <p class="service-item__desc">Gestão estratégica de redes sociais para posicionar e engajar sua marca no digital.</p>
@@ -120,7 +128,10 @@
         </a>
 
         <a href="servicos.html" class="service-item reveal reveal-d1">
-          <span class="service-item__num">02</span>
+          <span class="service-item__num">
+            <svg class="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            02
+          </span>
           <div class="service-item__body">
             <h3 class="service-item__name">Branding Digital</h3>
             <p class="service-item__desc">Posicionamento visual e estratégico para fortalecer sua presença digital.</p>
@@ -132,7 +143,10 @@
         </a>
 
         <a href="servicos.html" class="service-item reveal reveal-d2">
-          <span class="service-item__num">03</span>
+          <span class="service-item__num">
+            <svg class="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            03
+          </span>
           <div class="service-item__body">
             <h3 class="service-item__name">Vídeos Criativos</h3>
             <p class="service-item__desc">Roteiro, gravação e edição de vídeos curtos que capturam atenção.</p>
@@ -144,7 +158,10 @@
         </a>
 
         <a href="servicos.html" class="service-item reveal reveal-d3">
-          <span class="service-item__num">04</span>
+          <span class="service-item__num">
+            <svg class="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            04
+          </span>
           <div class="service-item__body">
             <h3 class="service-item__name">StoryMaker</h3>
             <p class="service-item__desc">Conteúdos para stories em tempo real com cobertura presencial.</p>
@@ -156,7 +173,10 @@
         </a>
 
         <a href="servicos.html" class="service-item reveal reveal-d4">
-          <span class="service-item__num">05</span>
+          <span class="service-item__num">
+            <svg class="service-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            05
+          </span>
           <div class="service-item__body">
             <h3 class="service-item__name">Visual Criativo</h3>
             <p class="service-item__desc">Design estratégico aliado a copy persuasivo que converte.</p>
@@ -170,6 +190,11 @@
       </div>
     </div>
   </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="var(--dark-surface)"/></svg>
+  </div>
 
   <!-- PORTFÓLIO — Sticky Scroll Gallery -->
   <section class="section section--warm sticky-portfolio-section">
@@ -254,13 +279,6 @@
           <p class="testimonial__role">Evento esportivo</p>
         </div>
 
-          <div class="fan__card" data-fan="1">
-              <img class="testimonial__photo" src="https://picsum.photos/seed/client2/400/500" alt="Copa Goiana de Society" loading="lazy">
-              <blockquote class="testimonial__quote">A cobertura do evento foi impecável. Os stories trouxeram um engajamento que nunca tínhamos visto.</blockquote>
-              <p class="testimonial__client">Copa Goiana de Society</p>
-              <p class="testimonial__role">Evento esportivo</p>
-          </div>
-
         <div class="fan__card" data-fan="2">
           <img class="testimonial__photo" src="https://picsum.photos/seed/client3/400/500" alt="Cliente satisfeito" loading="lazy">
           <blockquote class="testimonial__quote">Nosso perfil cresceu de forma orgânica e consistente. Recomendo demais!</blockquote>
@@ -296,17 +314,45 @@
     </div>
   </section>
 
-  <!-- LEMA -->
-  <section class="banner">
-    <div class="banner__bg banner__bg--parallax"></div>
-    <div class="banner__content reveal">
-      <p class="banner__text">
-        O nosso lema é:<br>
-        <em>Olhar para fora da janela.</em><br>
-        <em>Criar com autenticidade.</em><br>
-        <em>Impactar com propósito.</em>
-      </p>
+  <!-- MARQUEE LEMA -->
+  <section class="marquee-section section--dark" aria-label="Lema da agência">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Olhar para fora da janela</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--italic">Criar com autenticidade</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item">Impactar com propósito</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--italic">Olhar para fora da janela</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item">Criar com autenticidade</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--italic">Impactar com propósito</span>
+        <span class="marquee__sep"></span>
+      </div>
     </div>
+    <div class="marquee marquee--reverse" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item marquee__item--outline">Propósito</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--outline">Autenticidade</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--outline">Narrativa</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--outline">Propósito</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--outline">Autenticidade</span>
+        <span class="marquee__sep"></span>
+        <span class="marquee__item marquee__item--outline">Narrativa</span>
+        <span class="marquee__sep"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÉ-FOOTER -->
+  <section class="prefooter section--dark" aria-hidden="true">
+    <p class="prefooter__text">IKIGAI</p>
   </section>
 
   <!-- FOOTER -->
