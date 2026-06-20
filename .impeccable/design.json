@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T00:00:00Z",
+  "title": "Design System: Agência Ikigai",
+  "extensions": {
+    "colorMeta": {
+      "ember-orange": { "role": "primary", "displayName": "Ember Orange", "canonical": "oklch(0.62 0.18 55)", "tonalRamp": ["oklch(0.15 0.06 55)", "oklch(0.25 0.1 55)", "oklch(0.35 0.14 55)", "oklch(0.45 0.16 55)", "oklch(0.55 0.18 55)", "oklch(0.65 0.16 55)", "oklch(0.75 0.12 55)", "oklch(0.90 0.06 55)"] },
+      "warm-night": { "role": "neutral", "displayName": "Warm Night", "canonical": "oklch(0.12 0.008 50)", "tonalRamp": ["oklch(0.05 0.004 50)", "oklch(0.10 0.006 50)", "oklch(0.15 0.008 50)", "oklch(0.20 0.008 50)", "oklch(0.30 0.006 50)", "oklch(0.45 0.005 50)", "oklch(0.60 0.005 50)", "oklch(0.80 0.005 50)"] },
+      "warm-parchment": { "role": "neutral", "displayName": "Warm Parchment", "canonical": "oklch(0.95 0.012 80)", "tonalRamp": ["oklch(0.30 0.01 80)", "oklch(0.45 0.01 80)", "oklch(0.60 0.012 80)", "oklch(0.72 0.012 80)", "oklch(0.82 0.012 80)", "oklch(0.90 0.012 80)", "oklch(0.95 0.010 80)", "oklch(0.98 0.006 80)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines. Peso leve, tamanho dominante." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção. Bold, compacto." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, max 52ch." },
+      "label": { "displayName": "Label", "purpose": "Nav links, section labels, CTAs. Sempre uppercase." }
+    },
+    "shadows": [
+      { "name": "cta-glow", "value": "0 10px 40px oklch(0.62 0.18 55 / 0.2)", "purpose": "Hover glow on primary buttons." },
+      { "name": "arrow-glow", "value": "0 6px 24px oklch(0.62 0.18 55 / 0.2)", "purpose": "Hover glow on service arrows." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default exit easing for all transitions." },
+      { "name": "ease-smooth", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Color and opacity transitions." },
+      { "name": "ease-premium", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Hover and interactive state transitions." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "480px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "desktop", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Ember Orange pill, dark text, glow on hover.",
+      "html": "<button class=\"ds-btn-primary\">CONHEÇA NOSSO TRABALHO</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; font-family: Manrope, system-ui, sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 100px; background: oklch(0.62 0.18 55); color: oklch(0.12 0.008 50); border: none; cursor: pointer; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: oklch(0.55 0.2 48); transform: translateY(-2px); box-shadow: 0 10px 40px oklch(0.62 0.18 55 / 0.2); } .ds-btn-primary:active { transform: translateY(0) scale(0.96); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.62 0.18 55); outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary CTA. Transparent with light border, fill on hover.",
+      "html": "<button class=\"ds-btn-outline\">SOLICITE UM ORÇAMENTO</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; font-family: Manrope, system-ui, sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 100px; background: transparent; color: oklch(0.93 0.005 80); border: 1.5px solid oklch(0.93 0.005 80); cursor: pointer; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-outline:hover { background: oklch(0.93 0.005 80); color: oklch(0.12 0.008 50); transform: translateY(-2px); } .ds-btn-outline:focus-visible { outline: 2px solid oklch(0.62 0.18 55); outline-offset: 3px; }"
+    },
+    {
+      "name": "Service Arrow",
+      "kind": "button",
+      "refersTo": "service-arrow",
+      "description": "Circular arrow button in service list items. Rotates on hover.",
+      "html": "<div class=\"ds-service-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7M17 7H7M17 7V17\"/></svg></div>",
+      "css": ".ds-service-arrow { width: 48px; height: 48px; border-radius: 50%; background: oklch(0.62 0.18 55); display: grid; place-items: center; color: oklch(0.12 0.008 50); transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.4s cubic-bezier(0.32, 0.72, 0, 1); } .ds-service-arrow svg { width: 18px; height: 18px; } .ds-service-arrow:hover { transform: rotate(-45deg) scale(1.08); box-shadow: 0 6px 24px oklch(0.62 0.18 55 / 0.2); }"
+    },
+    {
+      "name": "Language Switcher",
+      "kind": "nav",
+      "refersTo": "lang-switch",
+      "description": "PT/EN/IT pill selector in header.",
+      "html": "<div class=\"ds-lang-switch\"><button class=\"ds-lang-btn ds-lang-active\">PT</button><button class=\"ds-lang-btn\">EN</button><button class=\"ds-lang-btn\">IT</button></div>",
+      "css": ".ds-lang-switch { display: flex; align-items: center; gap: 2px; background: oklch(0.18 0.005 50); border-radius: 100px; padding: 3px; border: 1px solid oklch(0.25 0.005 50); width: fit-content; } .ds-lang-btn { font-family: Manrope, system-ui, sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.3rem 0.55rem; border-radius: 100px; color: oklch(0.58 0.01 80); cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: none; background: none; } .ds-lang-btn:hover { color: oklch(0.93 0.005 80); } .ds-lang-active { background: oklch(0.62 0.18 55); color: oklch(0.12 0.008 50); font-weight: 700; }"
+    },
+    {
+      "name": "Fan Card",
+      "kind": "card",
+      "refersTo": "fan-card",
+      "description": "Testimonial card used in the fan carousel.",
+      "html": "<div class=\"ds-fan-card\"><img class=\"ds-fan-photo\" src=\"https://picsum.photos/seed/demo/400/300\" alt=\"Client\"><blockquote class=\"ds-fan-quote\">Resultado incrível! Vocês entenderam a essência da marca.</blockquote><p class=\"ds-fan-client\">Cliente ISHOUNIR</p><p class=\"ds-fan-role\">Conteúdo digital</p></div>",
+      "css": ".ds-fan-card { background: oklch(0.17 0.012 240); border-radius: 20px; padding: 1.5rem; border: 1px solid oklch(0.25 0.005 50); width: 320px; } .ds-fan-card:hover { border-color: oklch(0.62 0.18 55 / 0.4); } .ds-fan-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; } .ds-fan-quote { font-family: Literata, Georgia, serif; font-size: 0.9rem; font-style: italic; line-height: 1.6; color: oklch(0.93 0.005 80); margin: 0 0 1rem; position: relative; padding-left: 1.5rem; } .ds-fan-quote::before { content: '\\201C'; position: absolute; left: 0; top: -0.15em; font-family: Literata, Georgia, serif; font-size: 1.8em; color: oklch(0.62 0.18 55); line-height: 1; font-style: normal; } .ds-fan-client { font-weight: 600; font-size: 0.9rem; color: oklch(0.93 0.005 80); margin-bottom: 0.15rem; } .ds-fan-role { font-size: 0.8rem; color: oklch(0.58 0.01 80); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Selo de Propósito",
+    "overview": "Inspirado no hanko japonês, o selo pessoal que autentica com intenção. O sistema visual da Ikigai trata cada marca como um selo: singular, deliberado, impresso com peso. O laranja brasa é a tinta; o dark é a superfície que recebe a impressão. Cada elemento carrega autoridade sem excesso.\n\nA estética é dark-premium com acento laranja committed. Não é dark por tendência; é dark porque a Ikigai opera entre Brasil e Japão, e a escuridão é o palco onde a autenticidade de cada marca se destaca. O warm aparece como contraponto rítmico, quebrando a monotonia sem abandonar a sobriedade.",
+    "keyCharacteristics": [
+      "Dark committed com laranja como cor de autoridade",
+      "Tipografia serif editorial (Literata) + sans humanista (Manrope)",
+      "Ritmo de seções alternando dark/warm",
+      "Animações com easing exponencial, sem bounce",
+      "Ícones thin-line consistentes"
+    ],
+    "rules": [
+      { "name": "The Seal Rule", "body": "Ember Orange é reservado para ações e afirmações. Nunca como background de texto corrido, nunca como borda decorativa, nunca diluído em gradiente.", "section": "colors" },
+      { "name": "The Weight Gap Rule", "body": "Display é 400 (leve); Headline é 700 (bold). Nunca usar 500 ou 600 em headlines Literata.", "section": "typography" },
+      { "name": "The Flat Stage Rule", "body": "Superfícies são flat por padrão. Glow aparece exclusivamente como resposta a interação.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar OKLCH para todas as cores. Tint neutrals com chroma 0.005-0.01.",
+      "Do alternar seções dark/warm para ritmo visual.",
+      "Do usar easing cubic-bezier(0.16, 1, 0.3, 1) para transições.",
+      "Do manter ícones em stroke-width 1.5, sem fill.",
+      "Do respeitar prefers-reduced-motion.",
+      "Do usar clamp() para tipografia e espaçamento."
+    ],
+    "donts": [
+      "Don't usar #000000 ou #FFFFFF. Todo neutro é tintado warm.",
+      "Don't usar gradient text (background-clip: text).",
+      "Don't usar border-left como stripe decorativa.",
+      "Don't usar glassmorphism decorativo.",
+      "Don't usar bounce, elastic ou spring easing.",
+      "Don't usar gradientes neon, paletas roxo/azul de IA.",
+      "Don't usar cards idênticos repetidos em grid.",
+      "Don't usar Inter, Roboto, Poppins, DM Sans.",
+      "Don't animar width, height, top, left."
+    ]
+  }
+}
