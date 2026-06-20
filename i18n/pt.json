@@ -1,0 +1,51 @@
+{
+  "nav.home": "Home",
+  "nav.about": "Quem Somos",
+  "nav.services": "Serviços",
+  "nav.contact": "Contato",
+
+  "hero.headline": "Posicionamos marcas no digital com propósito & autenticidade",
+  "hero.cta.work": "Conheça nosso trabalho",
+  "hero.cta.quote": "Solicite um orçamento",
+  "hero.scroll": "Scroll",
+
+  "services.label": "O que fazemos",
+  "services.title": "Nossos Serviços",
+  "services.cta": "Ver mais",
+
+  "services.1.name": "Gerenciamento de Redes Sociais",
+  "services.1.desc": "Gestão estratégica de redes sociais para posicionar e engajar sua marca no digital.",
+  "services.2.name": "Branding Digital",
+  "services.2.desc": "Posicionamento visual e estratégico para fortalecer sua presença digital.",
+  "services.3.name": "Vídeos Criativos",
+  "services.3.desc": "Roteiro, gravação e edição de vídeos curtos que capturam atenção.",
+  "services.4.name": "StoryMaker",
+  "services.4.desc": "Conteúdos para stories em tempo real com cobertura presencial.",
+  "services.5.name": "Visual Criativo",
+  "services.5.desc": "Design estratégico aliado a copy persuasivo que converte.",
+
+  "portfolio.title": "Portfólio",
+
+  "testimonials.title": "O que nossos clientes dizem",
+  "testimonials.1.quote": "Ficou incrível o resultado! Vocês realmente entenderam a essência da nossa marca.",
+  "testimonials.1.client": "Cliente ISHOUNIR",
+  "testimonials.1.role": "Conteúdo sobre vida no Japão",
+  "testimonials.2.quote": "A cobertura do evento foi impecável. Os stories trouxeram um engajamento que nunca tínhamos visto.",
+  "testimonials.2.client": "Copa Goiana de Society",
+  "testimonials.2.role": "Evento esportivo",
+  "testimonials.3.quote": "Nosso perfil cresceu de forma orgânica e consistente. Recomendo demais!",
+  "testimonials.3.client": "Cliente Satisfeito",
+  "testimonials.3.role": "Gerenciamento de redes",
+  "testimonials.4.quote": "O branding mudou completamente a percepção da nossa marca. Os clientes comentam toda semana.",
+  "testimonials.4.client": "Cliente Branding",
+  "testimonials.4.role": "Branding Digital",
+  "testimonials.5.quote": "Os vídeos tiveram mais alcance do que qualquer conteúdo que já fizemos. Qualidade absurda!",
+  "testimonials.5.client": "Cliente Vídeos",
+  "testimonials.5.role": "Vídeos Criativos",
+
+  "footer.tagline": "Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.",
+  "footer.cta.talk": "Fale com a gente",
+  "footer.cta.quote": "Solicite um orçamento",
+  "footer.rights": "2026 Agência Ikigai. Todos os direitos reservados.",
+  "footer.made": "Feito com propósito."
+}

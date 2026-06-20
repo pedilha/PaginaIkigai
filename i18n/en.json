@@ -1,0 +1,51 @@
+{
+  "nav.home": "Home",
+  "nav.about": "About Us",
+  "nav.services": "Services",
+  "nav.contact": "Contact",
+
+  "hero.headline": "We position brands in the digital world with purpose & authenticity",
+  "hero.cta.work": "See our work",
+  "hero.cta.quote": "Request a quote",
+  "hero.scroll": "Scroll",
+
+  "services.label": "What we do",
+  "services.title": "Our Services",
+  "services.cta": "Learn more",
+
+  "services.1.name": "Social Media Management",
+  "services.1.desc": "Strategic social media management to position and engage your brand digitally.",
+  "services.2.name": "Digital Branding",
+  "services.2.desc": "Visual and strategic positioning to strengthen your digital presence.",
+  "services.3.name": "Creative Videos",
+  "services.3.desc": "Scriptwriting, filming, and editing of short videos that capture attention.",
+  "services.4.name": "StoryMaker",
+  "services.4.desc": "Real-time story content with on-site coverage.",
+  "services.5.name": "Creative Visuals",
+  "services.5.desc": "Strategic design combined with persuasive copy that converts.",
+
+  "portfolio.title": "Portfolio",
+
+  "testimonials.title": "What our clients say",
+  "testimonials.1.quote": "The result was incredible! You truly understood the essence of our brand.",
+  "testimonials.1.client": "ISHOUNIR Client",
+  "testimonials.1.role": "Content about life in Japan",
+  "testimonials.2.quote": "The event coverage was flawless. The stories brought engagement we had never seen before.",
+  "testimonials.2.client": "Copa Goiana de Society",
+  "testimonials.2.role": "Sports event",
+  "testimonials.3.quote": "Since we started working with Ikigai, our profile grew organically and consistently. Highly recommend!",
+  "testimonials.3.client": "Satisfied Client",
+  "testimonials.3.role": "Social media management",
+  "testimonials.4.quote": "The branding completely changed the perception of our brand. Clients comment on it every week.",
+  "testimonials.4.client": "Branding Client",
+  "testimonials.4.role": "Digital Branding",
+  "testimonials.5.quote": "The videos had more reach than any content we've ever produced. Incredible quality!",
+  "testimonials.5.client": "Video Client",
+  "testimonials.5.role": "Creative Videos",
+
+  "footer.tagline": "We are more than a marketing agency: we are builders of authentic narratives that reflect each brand's unique essence.",
+  "footer.cta.talk": "Talk to us",
+  "footer.cta.quote": "Request a quote",
+  "footer.rights": "2026 Agência Ikigai. All rights reserved.",
+  "footer.made": "Made with purpose."
+}

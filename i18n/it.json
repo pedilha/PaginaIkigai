@@ -1,0 +1,51 @@
+{
+  "nav.home": "Home",
+  "nav.about": "Chi Siamo",
+  "nav.services": "Servizi",
+  "nav.contact": "Contatto",
+
+  "hero.headline": "Posizioniamo i brand nel digitale con scopo e autenticità",
+  "hero.cta.work": "Scopri il nostro lavoro",
+  "hero.cta.quote": "Richiedi un preventivo",
+  "hero.scroll": "Scorri",
+
+  "services.label": "Cosa facciamo",
+  "services.title": "I Nostri Servizi",
+  "services.cta": "Scopri di più",
+
+  "services.1.name": "Gestione Social Media",
+  "services.1.desc": "Gestione strategica dei social media per posizionare e coinvolgere il tuo brand nel digitale.",
+  "services.2.name": "Branding Digitale",
+  "services.2.desc": "Posizionamento visivo e strategico per rafforzare la tua presenza digitale.",
+  "services.3.name": "Video Creativi",
+  "services.3.desc": "Sceneggiatura, riprese e montaggio di video brevi che catturano l'attenzione.",
+  "services.4.name": "StoryMaker",
+  "services.4.desc": "Contenuti per storie in tempo reale con copertura sul posto.",
+  "services.5.name": "Visual Creativo",
+  "services.5.desc": "Design strategico unito a copy persuasivo che converte.",
+
+  "portfolio.title": "Portfolio",
+
+  "testimonials.title": "Cosa dicono i nostri clienti",
+  "testimonials.1.quote": "Il risultato è stato incredibile! Avete davvero compreso l'essenza del nostro brand.",
+  "testimonials.1.client": "Cliente ISHOUNIR",
+  "testimonials.1.role": "Contenuti sulla vita in Giappone",
+  "testimonials.2.quote": "La copertura dell'evento è stata impeccabile. Le storie hanno portato un engagement mai visto prima.",
+  "testimonials.2.client": "Copa Goiana de Society",
+  "testimonials.2.role": "Evento sportivo",
+  "testimonials.3.quote": "Da quando lavoriamo con Ikigai, il nostro profilo è cresciuto in modo organico e costante. Consigliatissimi!",
+  "testimonials.3.client": "Cliente Soddisfatto",
+  "testimonials.3.role": "Gestione social media",
+  "testimonials.4.quote": "Il branding ha cambiato completamente la percezione del nostro brand. I clienti ne parlano ogni settimana.",
+  "testimonials.4.client": "Cliente Branding",
+  "testimonials.4.role": "Branding Digitale",
+  "testimonials.5.quote": "I video hanno avuto più portata di qualsiasi contenuto mai prodotto. Qualità assurda!",
+  "testimonials.5.client": "Cliente Video",
+  "testimonials.5.role": "Video Creativi",
+
+  "footer.tagline": "Siamo più di un'agenzia di marketing: siamo costruttori di narrazioni autentiche che riflettono l'essenza unica di ogni brand.",
+  "footer.cta.talk": "Parliamone",
+  "footer.cta.quote": "Richiedi un preventivo",
+  "footer.rights": "2026 Agência Ikigai. Tutti i diritti riservati.",
+  "footer.made": "Fatto con scopo."
+}
