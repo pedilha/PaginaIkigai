@@ -33,31 +33,41 @@
       <img src="assets/logo_header.png" alt="Agência Ikigai" class="logo__img">
     </a>
     <nav class="nav" aria-label="Navegação principal">
-      <a href="index.html">Home</a>
-      <a href="quem-somos.html">Quem Somos</a>
-      <a href="servicos.html" class="active">Serviços</a>
-      <a href="contato.html">Contato</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="quem-somos.html" data-i18n="nav.about">Quem Somos</a>
+      <a href="servicos.html" class="active" data-i18n="nav.services">Serviços</a>
+      <a href="contato.html" data-i18n="nav.contact">Contato</a>
     </nav>
+    <div class="lang-switch">
+      <button class="lang-switch__btn active" data-lang="pt">PT</button>
+      <button class="lang-switch__btn" data-lang="en">EN</button>
+      <button class="lang-switch__btn" data-lang="it">IT</button>
+    </div>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
   <div class="mobile-nav" role="dialog" aria-label="Menu de navegação">
-    <a href="index.html">Home</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="quem-somos.html" data-i18n="nav.about">Quem Somos</a>
+    <a href="servicos.html" data-i18n="nav.services">Serviços</a>
+    <a href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="lang-switch" style="margin-top: var(--space-sm);">
+      <button class="lang-switch__btn active" data-lang="pt">PT</button>
+      <button class="lang-switch__btn" data-lang="en">EN</button>
+      <button class="lang-switch__btn" data-lang="it">IT</button>
+    </div>
   </div>
 
   <!-- HERO -->
-  <section class="hero section--dark" style="min-height: 70vh;">
-    <div class="hero__gradient"></div>
-    <div class="hero__noise"></div>
+  <section class="hero hero--page section--dark">
+    <div class="hero__gradient" aria-hidden="true"></div>
+    <div class="hero__noise" aria-hidden="true"></div>
     <div class="hero__content">
-      <p class="section-label">Nossos serviços</p>
-      <h1 class="hero__headline" style="font-size: var(--text-3xl);">Soluções <em>estratégicas</em> para marcas que querem se <em>destacar</em></h1>
+      <p class="section-label" data-i18n="services.hero.label">Nossos serviços</p>
+      <h1 class="hero__headline" style="font-size: var(--text-3xl);" data-i18n-html="services.hero.headline">Soluções <em>estratégicas</em> para marcas que querem se <em>destacar</em></h1>
       <div class="hero__cta">
-        <a href="contato.html" class="btn btn--orange">Solicite um orçamento</a>
+        <a href="contato.html" class="btn btn--orange" data-i18n="cta.quote">Solicite um orçamento</a>
       </div>
     </div>
   </section>
@@ -68,20 +78,20 @@
       <div class="service-detail">
         <div class="reveal-left">
           <span class="service-detail__number">01</span>
-          <h2 class="service-detail__title">Gerenciamento de Redes Sociais</h2>
-          <p class="service-detail__text">Cuidamos do seu perfil como se fosse nosso. Planejamento de conteúdo, criação de posts, gestão de comunidade e relatórios de performance.</p>
-          <p class="service-detail__text">Não acreditamos em fórmulas prontas. Cada marca tem uma voz, e nosso trabalho é encontrá-la e amplificá-la nas redes sociais com consistência e estratégia.</p>
-          <a href="contato.html" class="btn btn--outline" style="margin-top: var(--space-sm);">Solicite um orçamento</a>
+          <h2 class="service-detail__title" data-i18n="services.1.name">Gerenciamento de Redes Sociais</h2>
+          <p class="service-detail__text" data-i18n="services.1.text1">Cuidamos do seu perfil como se fosse nosso. Planejamento de conteúdo, criação de posts, gestão de comunidade e relatórios de performance.</p>
+          <p class="service-detail__text" data-i18n="services.1.text2">Não acreditamos em fórmulas prontas. Cada marca tem uma voz, e nosso trabalho é encontrá-la e amplificá-la nas redes sociais com consistência e estratégia.</p>
+          <a href="contato.html" class="btn btn--outline" style="margin-top: var(--space-sm);" data-i18n="cta.quote">Solicite um orçamento</a>
         </div>
         <div class="reveal-right">
           <div class="service-detail__card">
-            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);margin-bottom:var(--space-sm);">O que está incluso</h3>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);margin-bottom:var(--space-sm);" data-i18n="services.included.title">O que está incluso</h3>
             <div class="checklist">
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Posicionamento Digital Estratégico</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Conteúdos Relevantes e Autênticos</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Identidade Visual Profissional</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Consistência e Organização</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Interação e Engajamento Estratégico</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.1.included.1">Posicionamento Digital Estratégico</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.1.included.2">Conteúdos Relevantes e Autênticos</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.1.included.3">Identidade Visual Profissional</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.1.included.4">Consistência e Organização</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.1.included.5">Interação e Engajamento Estratégico</span></div>
             </div>
           </div>
         </div>
@@ -95,19 +105,19 @@
       <div class="service-detail service-detail--flip">
         <div class="reveal-right">
           <span class="service-detail__number">02</span>
-          <h2 class="service-detail__title">Branding Digital</h2>
-          <p class="service-detail__text">Sua marca precisa de mais do que um logo bonito. Precisa de uma identidade que comunique quem você é, o que você faz e por que isso importa.</p>
-          <a href="contato.html" class="btn btn--outline-dark" style="margin-top: var(--space-sm);">Solicite um orçamento</a>
+          <h2 class="service-detail__title" data-i18n="services.2.name">Branding Digital</h2>
+          <p class="service-detail__text" data-i18n="services.2.text1">Sua marca precisa de mais do que um logo bonito. Precisa de uma identidade que comunique quem você é, o que você faz e por que isso importa.</p>
+          <a href="contato.html" class="btn btn--outline-dark" style="margin-top: var(--space-sm);" data-i18n="cta.quote">Solicite um orçamento</a>
         </div>
         <div class="reveal-left">
           <div class="service-detail__card service-detail__card--inverted">
-            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);margin-bottom:var(--space-sm);">O que está incluso</h3>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);margin-bottom:var(--space-sm);" data-i18n="services.included.title">O que está incluso</h3>
             <div class="checklist">
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Identidade Visual Profissional</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Tom de Voz e Linguagem Estratégica</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Diferenciação no Mercado</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Coerência e Profundidade na Comunicação</span></div>
-              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Facilidade na Produção de Conteúdo</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.2.included.1">Identidade Visual Profissional</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.2.included.2">Tom de Voz e Linguagem Estratégica</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.2.included.3">Diferenciação no Mercado</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.2.included.4">Coerência e Profundidade na Comunicação</span></div>
+              <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.2.included.5">Facilidade na Produção de Conteúdo</span></div>
             </div>
           </div>
         </div>
@@ -121,15 +131,15 @@
       <div class="service-detail">
         <div class="reveal-left">
           <span class="service-detail__number">03</span>
-          <h2 class="service-detail__title">Vídeos Criativos</h2>
-          <p class="service-detail__text">Roteiro, gravação e edição de vídeos curtos que capturam atenção nos primeiros segundos. Criamos conteúdo pensado para a linguagem de cada plataforma.</p>
+          <h2 class="service-detail__title" data-i18n="services.3.name">Vídeos Criativos</h2>
+          <p class="service-detail__text" data-i18n="services.3.text1">Roteiro, gravação e edição de vídeos curtos que capturam atenção nos primeiros segundos. Criamos conteúdo pensado para a linguagem de cada plataforma.</p>
           <div class="checklist" style="margin: var(--space-md) 0;">
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Roteiro e direção criativa</span></div>
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Gravação profissional</span></div>
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Edição e pós-produção</span></div>
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Legendas e adaptação por plataforma</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.3.checklist.1">Roteiro e direção criativa</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.3.checklist.2">Gravação profissional</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.3.checklist.3">Edição e pós-produção</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.3.checklist.4">Legendas e adaptação por plataforma</span></div>
           </div>
-          <a href="contato.html" class="btn btn--outline">Solicite um orçamento</a>
+          <a href="contato.html" class="btn btn--outline" data-i18n="cta.quote">Solicite um orçamento</a>
         </div>
         <div class="reveal-right">
           <div class="video-stack">
@@ -153,15 +163,15 @@
       <div class="service-detail service-detail--flip">
         <div class="reveal-right">
           <span class="service-detail__number">04</span>
-          <h2 class="service-detail__title">StoryMaker</h2>
-          <p class="service-detail__text">Cobertura presencial em tempo real para stories que capturam a energia do momento. Ideal para eventos, lançamentos, viagens e experiências.</p>
+          <h2 class="service-detail__title" data-i18n="services.4.name">StoryMaker</h2>
+          <p class="service-detail__text" data-i18n="services.4.text1">Cobertura presencial em tempo real para stories que capturam a energia do momento. Ideal para eventos, lançamentos, viagens e experiências.</p>
           <div class="checklist" style="margin: var(--space-md) 0;">
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Cobertura em tempo real</span></div>
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Stories profissionais no ato</span></div>
-            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span>Fotos e vídeos do evento</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.4.checklist.1">Cobertura em tempo real</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.4.checklist.2">Stories profissionais no ato</span></div>
+            <div class="checklist__item"><div class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="services.4.checklist.3">Fotos e vídeos do evento</span></div>
           </div>
-          <p style="font-size: var(--text-sm); color: var(--text-muted-warm); margin-bottom: var(--space-md);"><strong>Ideal para:</strong> eventos, casamentos, shows, workshops, lançamentos e viagens.</p>
-          <a href="contato.html" class="btn btn--outline-dark">Solicite um orçamento</a>
+          <p style="font-size: var(--text-sm); color: var(--text-muted-warm); margin-bottom: var(--space-md);"><strong data-i18n="services.4.idealForLabel">Ideal para:</strong> <span data-i18n="services.4.idealForText">eventos, casamentos, shows, workshops, lançamentos e viagens.</span></p>
+          <a href="contato.html" class="btn btn--outline-dark" data-i18n="cta.quote">Solicite um orçamento</a>
         </div>
         <div class="reveal-left">
           <div class="video-stack">
@@ -185,9 +195,9 @@
       <div class="service-detail" style="border-bottom: none;">
         <div class="reveal-left">
           <span class="service-detail__number">05</span>
-          <h2 class="service-detail__title">Visual Criativo</h2>
-          <p class="service-detail__text">Design estratégico aliado a copy persuasivo. Cada peça visual é pensada para comunicar, não só para decorar. Do feed ao carrossel, criamos conteúdos que param o scroll.</p>
-          <a href="contato.html" class="btn btn--outline" style="margin-top: var(--space-sm);">Solicite um orçamento</a>
+          <h2 class="service-detail__title" data-i18n="services.5.name">Visual Criativo</h2>
+          <p class="service-detail__text" data-i18n="services.5.text1">Design estratégico aliado a copy persuasivo. Cada peça visual é pensada para comunicar, não só para decorar. Do feed ao carrossel, criamos conteúdos que param o scroll.</p>
+          <a href="contato.html" class="btn btn--outline" style="margin-top: var(--space-sm);" data-i18n="cta.quote">Solicite um orçamento</a>
         </div>
         <div class="reveal-right">
           <div class="post-grid">
@@ -204,8 +214,8 @@
   <!-- CTA -->
   <section class="section section--surface cta-section">
     <div class="container-sm reveal">
-      <h2 class="cta-section__title">Ainda não tem certeza qual a melhor solução pra você?</h2>
-      <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--orange" target="_blank" rel="noopener">Fale com a gente</a>
+      <h2 class="cta-section__title" data-i18n="services.cta.title">Ainda não tem certeza qual a melhor solução pra você?</h2>
+      <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--orange" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
     </div>
   </section>
 
@@ -213,7 +223,7 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__grid">
       <div>
-        <p class="footer__tagline">Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.</p>
         <div class="footer__contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           <span>+81 070 91892615</span>
@@ -224,8 +234,8 @@
         </div>
       </div>
       <div class="footer__actions">
-        <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener">Fale com a gente</a>
-        <a href="contato.html" class="btn btn--outline">Solicite um orçamento</a>
+        <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
+        <a href="contato.html" class="btn btn--outline" data-i18n="cta.quote">Solicite um orçamento</a>
         <div class="footer__social">
           <a href="https://www.instagram.com/agencia.ikigai/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -237,11 +247,12 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 Agência Ikigai. Todos os direitos reservados.</span>
-      <span>Feito com propósito.</span>
+      <span>&copy; <span id="copyright-year"></span> <span data-i18n="footer.rightsSuffix">Agência Ikigai. Todos os direitos reservados.</span></span>
+      <span data-i18n="footer.made">Feito com propósito.</span>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

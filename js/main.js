@@ -39,12 +39,14 @@
   }
 
   // ===== HERO WORD ANIMATION =====
+  // Wraps on innerHTML (not textContent) so single-word <em> emphasis
+  // (e.g. "<em>seu</em>") survives the wrap instead of being flattened.
   let firstHeadlineWrap = true;
 
   window.__ikigaiWrapHeadline = function() {
     const h = document.querySelector('.hero__headline');
     if (!h || prefersReducedMotion) return;
-    const raw = h.textContent;
+    const raw = h.innerHTML;
     const animate = firstHeadlineWrap;
     firstHeadlineWrap = false;
     h.innerHTML = raw.replace(/(\S+)/g, (m) =>
@@ -56,6 +58,12 @@
       );
     }
   };
+
+  // ===== COPYRIGHT YEAR =====
+  // Set unconditionally, outside any data-i18n span, so it survives i18n
+  // applying translated footer text via textContent.
+  const copyrightYear = document.getElementById('copyright-year');
+  if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
 
   if (!prefersReducedMotion) {
     ['.hero__sub', '.hero__cta'].forEach((sel, i) => {

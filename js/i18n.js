@@ -28,14 +28,16 @@
   }
 
   function applyTranslations(translations) {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
       if (!translations[key]) return;
 
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = translations[key];
       } else if (el.dataset.i18nAttr) {
         el.setAttribute(el.dataset.i18nAttr, translations[key]);
+      } else if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = translations[key];
       } else {
         el.textContent = translations[key];
       }

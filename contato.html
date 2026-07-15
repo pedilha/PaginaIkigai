@@ -33,29 +33,39 @@
       <img src="assets/logo_header.png" alt="Agência Ikigai" class="logo__img">
     </a>
     <nav class="nav" aria-label="Navegação principal">
-      <a href="index.html">Home</a>
-      <a href="quem-somos.html">Quem Somos</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="contato.html" class="active">Contato</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="quem-somos.html" data-i18n="nav.about">Quem Somos</a>
+      <a href="servicos.html" data-i18n="nav.services">Serviços</a>
+      <a href="contato.html" class="active" data-i18n="nav.contact">Contato</a>
     </nav>
+    <div class="lang-switch">
+      <button class="lang-switch__btn active" data-lang="pt">PT</button>
+      <button class="lang-switch__btn" data-lang="en">EN</button>
+      <button class="lang-switch__btn" data-lang="it">IT</button>
+    </div>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
   <div class="mobile-nav" role="dialog" aria-label="Menu de navegação">
-    <a href="index.html">Home</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="quem-somos.html" data-i18n="nav.about">Quem Somos</a>
+    <a href="servicos.html" data-i18n="nav.services">Serviços</a>
+    <a href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="lang-switch" style="margin-top: var(--space-sm);">
+      <button class="lang-switch__btn active" data-lang="pt">PT</button>
+      <button class="lang-switch__btn" data-lang="en">EN</button>
+      <button class="lang-switch__btn" data-lang="it">IT</button>
+    </div>
   </div>
 
   <!-- HERO -->
-  <section class="hero section--dark" style="min-height: 55vh;">
-    <div class="hero__gradient"></div>
-    <div class="hero__noise"></div>
+  <section class="hero hero--page section--dark">
+    <div class="hero__gradient" aria-hidden="true"></div>
+    <div class="hero__noise" aria-hidden="true"></div>
     <div class="hero__content" style="max-width: 800px;">
-      <p class="section-label">Contato</p>
-      <h1 class="hero__headline" style="font-size: var(--text-3xl);">Posicione a sua marca na avenida mais lotada do mundo: a <em>internet</em></h1>
+      <p class="section-label" data-i18n="contact.hero.label">Contato</p>
+      <h1 class="hero__headline" style="font-size: var(--text-3xl);" data-i18n-html="contact.hero.headline">Posicione a sua marca na avenida mais lotada do mundo: a <em>internet</em></h1>
     </div>
   </section>
 
@@ -64,69 +74,69 @@
     <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: start;">
 
       <div class="reveal">
-        <h2 class="section-title">Solicite um orçamento</h2>
-        <p class="section-desc" style="margin-bottom: var(--space-md);">Preencha o formulário e entraremos em contato em até 24 horas.</p>
+        <h2 class="section-title" data-i18n="cta.quote">Solicite um orçamento</h2>
+        <p class="section-desc" style="margin-bottom: var(--space-md);" data-i18n="contact.form.desc">Preencha o formulário e entraremos em contato em até 24 horas.</p>
 
         <form class="form" action="#" method="POST" novalidate>
           <div class="form__row">
             <div class="form__field">
-              <label class="form__label" for="name">Nome</label>
-              <input class="form__input" type="text" id="name" name="name" placeholder="Seu nome completo" required>
-              <span class="form__error">Campo obrigatório</span>
+              <label class="form__label" for="name" data-i18n="contact.form.name.label">Nome</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Seu nome completo" data-i18n="contact.form.name.placeholder" required>
+              <span class="form__error" data-i18n="contact.form.requiredError">Campo obrigatório</span>
             </div>
             <div class="form__field">
-              <label class="form__label" for="email">E-mail</label>
-              <input class="form__input" type="email" id="email" name="email" placeholder="seu@email.com" required>
-              <span class="form__error">E-mail inválido</span>
+              <label class="form__label" for="email" data-i18n="contact.form.email.label">E-mail</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="seu@email.com" data-i18n="contact.form.email.placeholder" required>
+              <span class="form__error" data-i18n="contact.form.email.error">E-mail inválido</span>
             </div>
           </div>
 
           <div class="form__field">
-            <label class="form__label" for="company">Empresa / Marca</label>
-            <input class="form__input" type="text" id="company" name="company" placeholder="Nome da sua empresa ou marca">
+            <label class="form__label" for="company" data-i18n="contact.form.company.label">Empresa / Marca</label>
+            <input class="form__input" type="text" id="company" name="company" placeholder="Nome da sua empresa ou marca" data-i18n="contact.form.company.placeholder">
           </div>
 
           <div class="form__field">
-            <label class="form__label" for="service">Serviço de interesse</label>
+            <label class="form__label" for="service" data-i18n="contact.form.service.label">Serviço de interesse</label>
             <select class="form__select" id="service" name="service">
-              <option value="">Selecione um serviço</option>
-              <option value="redes">Gerenciamento de Redes Sociais</option>
-              <option value="branding">Branding Digital</option>
-              <option value="videos">Vídeos Criativos</option>
-              <option value="storymaker">StoryMaker</option>
-              <option value="visual">Visual Criativo</option>
-              <option value="outro">Outro</option>
+              <option value="" data-i18n="contact.form.service.placeholder">Selecione um serviço</option>
+              <option value="redes" data-i18n="services.1.name">Gerenciamento de Redes Sociais</option>
+              <option value="branding" data-i18n="services.2.name">Branding Digital</option>
+              <option value="videos" data-i18n="services.3.name">Vídeos Criativos</option>
+              <option value="storymaker" data-i18n="services.4.name">StoryMaker</option>
+              <option value="visual" data-i18n="services.5.name">Visual Criativo</option>
+              <option value="outro" data-i18n="contact.form.service.other">Outro</option>
             </select>
           </div>
 
           <div class="form__field">
-            <label class="form__label" for="message">Mensagem</label>
-            <textarea class="form__textarea" id="message" name="message" placeholder="Conte um pouco sobre o que você precisa..." required></textarea>
-            <span class="form__error">Campo obrigatório</span>
+            <label class="form__label" for="message" data-i18n="contact.form.message.label">Mensagem</label>
+            <textarea class="form__textarea" id="message" name="message" placeholder="Conte um pouco sobre o que você precisa..." data-i18n="contact.form.message.placeholder" required></textarea>
+            <span class="form__error" data-i18n="contact.form.requiredError">Campo obrigatório</span>
           </div>
 
-          <button type="submit" class="btn btn--orange" style="align-self: flex-start; margin-top: var(--space-xs);">Enviar mensagem</button>
+          <button type="submit" class="btn btn--orange" style="align-self: flex-start; margin-top: var(--space-xs);" data-i18n="contact.form.submit">Enviar mensagem</button>
         </form>
 
         <div class="form__success">
-          <h3>Mensagem enviada!</h3>
-          <p>Obrigado pelo contato. Retornaremos em breve.</p>
+          <h3 data-i18n="contact.form.success.title">Mensagem enviada!</h3>
+          <p data-i18n="contact.form.success.text">Obrigado pelo contato. Retornaremos em breve.</p>
         </div>
       </div>
 
       <!-- SIDEBAR -->
       <div class="reveal reveal-d2" style="padding-top: var(--space-lg);">
         <div class="info-card">
-          <h3 class="info-card__title">Prefere conversar direto?</h3>
-          <p class="info-card__text">Se preferir, entre em contato diretamente pelo WhatsApp. Respondemos rápido.</p>
+          <h3 class="info-card__title" data-i18n="contact.sidebar.whatsapp.title">Prefere conversar direto?</h3>
+          <p class="info-card__text" data-i18n="contact.sidebar.whatsapp.text">Se preferir, entre em contato diretamente pelo WhatsApp. Respondemos rápido.</p>
           <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Fale pelo WhatsApp
+            <span data-i18n="contact.sidebar.whatsapp.cta">Fale pelo WhatsApp</span>
           </a>
         </div>
 
         <div class="info-card">
-          <h3 class="info-card__title">Informações de contato</h3>
+          <h3 class="info-card__title" data-i18n="contact.sidebar.info.title">Informações de contato</h3>
           <div class="footer__contact-row" style="color: var(--text-muted);">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             <span>+81 070 91892615</span>
@@ -153,7 +163,7 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__grid">
       <div>
-        <p class="footer__tagline">Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.</p>
         <div class="footer__contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           <span>+81 070 91892615</span>
@@ -164,8 +174,8 @@
         </div>
       </div>
       <div class="footer__actions">
-        <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener">Fale com a gente</a>
-        <a href="contato.html" class="btn btn--outline">Solicite um orçamento</a>
+        <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
+        <a href="contato.html" class="btn btn--outline" data-i18n="cta.quote">Solicite um orçamento</a>
         <div class="footer__social">
           <a href="https://www.instagram.com/agencia.ikigai/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -177,11 +187,12 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 Agência Ikigai. Todos os direitos reservados.</span>
-      <span>Feito com propósito.</span>
+      <span>&copy; <span id="copyright-year"></span> <span data-i18n="footer.rightsSuffix">Agência Ikigai. Todos os direitos reservados.</span></span>
+      <span data-i18n="footer.made">Feito com propósito.</span>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
