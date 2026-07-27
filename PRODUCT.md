@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Pequenos e médios negócios e criadores de conteúdo em todo o Brasil (não restrito a Goiás) que buscam marketing digital autêntico: gestão de redes sociais, branding digital, vídeos criativos e cobertura de eventos. Clientes chegam via indicação/redes sociais e avaliam a agência primeiro pela credibilidade e identidade visual do site antes de pedir orçamento. Eles querem sentir que a marca deles será tratada como uma história única, não como "mais um cliente".
+Empreendedoras, marcas pessoais, empresas de serviço e negócios em todo o Brasil que já têm algo especial mas precisam comunicá-lo com clareza. Três momentos típicos: (1) marcas começando, que precisam de direção desde o início; (2) marcas crescendo, cuja comunicação já não acompanha a dimensão do negócio; (3) marcas se reposicionando, que precisam realinhar essência, estratégia e expressão a uma nova fase. Clientes chegam via indicação/redes sociais e avaliam a agência primeiro pela credibilidade e identidade visual do site antes de pedir orçamento. Eles não querem só aparecer — querem construir significado, reconhecimento e conexão, e ser tratados como um projeto único, não como "mais um cliente" (agência boutique, não fábrica de conteúdo).
 
 ## Product Purpose
 
-Site institucional da Agência Ikigai: apresenta a agência, sua filosofia (o conceito japonês de ikigai, "razão de ser"), os serviços oferecidos, portfólio e equipe, e converte visitantes em leads via WhatsApp/formulário de orçamento. Sucesso é o visitante entender a proposta de valor (marketing com propósito e autenticidade) e agir (pedir orçamento ou falar com a equipe).
+Site institucional da Agência Ikigai, agora posicionada como agência boutique de branding e conteúdo (não mais gestão genérica de redes sociais): apresenta a filosofia da agência (o conceito japonês de ikigai, "razão de ser", e o Método Ikigai dos 4Es — Essência, Estratégia, Expressão, Experiência), os serviços (estratégia de conteúdo, conteúdo criativo, Storymaker, análise de perfil, DNA da marca, branding completo, projetos personalizados), projetos selecionados e equipe, e converte visitantes em leads via WhatsApp/formulário de orçamento. Sucesso é o visitante entender que a Ikigai constrói marcas com propósito, estratégia e expressão — e agir (começar um projeto ou falar com a equipe).
 
 ## Brand Personality
 
@@ -26,11 +26,12 @@ Rejeita explicitamente: marketing genérico de agência, gradientes neon, glassm
 
 ## Design Principles
 
-- **O selo, não o carimbo em massa**: cada elemento de marca (cor, tipografia, componente) deve parecer deliberado e único, nunca repetido sem intenção — evitar grids de cards idênticos e padrões de template.
-- **Mostrar, não anunciar**: provar autenticidade e propósito através de portfólio, depoimentos reais e narrativa da equipe, não através de adjetivos de marketing vazios.
+- **O selo, não o carimbo em massa**: cada elemento de marca (cor, tipografia, componente) deve parecer deliberado e único, nunca repetido sem intenção — evitar grids de cards idênticos e padrões de template. Reflete a própria promessa da agência: "somos uma agência boutique, cada projeto é único."
+- **Começamos pela marca, não pelo post**: a estrutura do site segue o Método Ikigai (Essência → Estratégia → Expressão → Experiência) — estratégia e propósito vêm antes de qualquer entrega visual, no conteúdo e no próprio design.
+- **Mostrar, não anunciar**: provar autenticidade e propósito através de projetos selecionados, depoimentos reais e narrativa da equipe, não através de adjetivos de marketing vazios.
 - **Ritmo antes de uniformidade**: alternância dark/warm e variação de espaçamento comunicam cuidado editorial; nunca mais de 2 seções dark consecutivas sem quebra.
 - **A ponte Brasil-Japão é estrutural, não decorativa**: a estética (serif editorial + acento laranja + disciplina de composição) reflete a fusão cultural real da agência, não é aplicada por cima.
-- **Confiança sóbria sobre efeito fácil**: preferir tipografia e composição para criar impacto a recursos genéricos (glow decorativo, glassmorphism, gradiente) que não carregam significado.
+- **Confiança sóbria sobre efeito fácil**: preferir tipografia e composição para criar impacto a recursos genéricos (glow decorativo, glassmorphism, gradiente) que não carregam significado — direção criativa próxima e boutique, não fórmula de agência de massa.
 
 ## Accessibility & Inclusion
 
