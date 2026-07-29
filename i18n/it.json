@@ -32,14 +32,12 @@
   "home.hero.sub": "Ikigai è un'agenzia di branding e contenuti che trasforma l'essenza dei brand in posizionamenti strategici.",
   "home.hero.scroll": "Scorri",
 
-  "home.intro.label": "Scopo",
   "home.intro.title": "Il nostro scopo è accendere il tuo scopo.",
   "home.intro.text1": "Crediamo che un brand non si costruisca solo con ciò che pubblica, ma con tutto ciò che comunica, offre e fa sentire a qualcuno.",
   "home.intro.text2": "Per questo uniamo branding, strategia, contenuti e storytelling per creare brand coerenti dall'essenza all'esperienza.",
   "home.intro.text3": "Qui, ogni progetto inizia con una domanda: qual è lo scopo che deve prendere forma?",
   "home.intro.link": "Scopri Ikigai",
 
-  "home.audience.label": "Per chi",
   "home.audience.title": "Per brand che sanno di avere qualcosa di speciale, ma devono comunicarlo con chiarezza.",
   "home.audience.text1": "Lavoriamo con imprenditrici, brand personali, aziende di servizi e attività che vogliono crescere senza perdere la propria essenza.",
   "home.audience.text2": "Brand che non vogliono solo apparire, ma costruire significato, riconoscimento e connessione.",
@@ -50,7 +48,6 @@
   "home.audience.3.title": "Per chi vuole riposizionarsi",
   "home.audience.3.text": "E ha bisogno di allineare essenza, strategia ed espressione a una nuova fase.",
 
-  "home.services.label": "Cosa facciamo",
   "home.services.title": "Servizi Principali",
   "home.services.cta": "Scopri di più",
   "home.services.ctaButton": "Scopri tutti i servizi",
@@ -63,7 +60,6 @@
   "home.services.6.desc": "Costruiamo brand da zero, unendo strategia, naming e identità visiva per creare una presenza con scopo e personalità.",
   "home.services.7.desc": "Siti, cataloghi, presentazioni, e-book e materiali per lanci o eventi, sviluppati in base alle necessità del tuo brand.",
 
-  "home.method.label": "Il nostro processo",
   "home.method.title": "Metodo Ikigai - le 4 E",
   "home.method.intro1": "Non partiamo dal post. Partiamo dal brand.",
   "home.method.intro2": "Il nostro processo trasforma ciò che rende unico un business in una comunicazione strategica, riconoscibile e coerente.",
@@ -76,7 +72,6 @@
   "home.method.4.title": "Esperienza",
   "home.method.4.text": "Costruiamo punti di contatto che fanno percepire, ricordare e sentire il brand.",
 
-  "home.projects.label": "Il nostro lavoro",
   "home.projects.title": "Alcuni dei progetti realizzati qui:",
   "home.projects.1.name": "Monai",
   "home.projects.1.desc": "Branding completo e lancio di un brand creato per gli appassionati di sport, caffè ed esperienze.",
@@ -85,7 +80,6 @@
   "home.projects.3.name": "Mayara Félix",
   "home.projects.3.desc": "Strategia di contenuto e posizionamento per una leader e imprenditrice, trasformando il suo percorso, la sua visione di business e le sue esperienze in narrazioni che ispirano e rafforzano la sua autorevolezza.",
 
-  "home.diff.label": "I nostri punti di forza",
   "home.diff.title1": "Siamo un'agenzia Boutique. Questo significa che qui ogni progetto è unico.",
   "home.diff.title2": "Preparati a conoscere la tua nuova agenzia preferita. Molto più di un'agenzia, una partner del tuo brand.",
   "home.diff.1.title": "Visione strategica",
@@ -126,33 +120,32 @@
   "home.finalCta.title": "Il tuo brand ha già un'essenza. Il nostro lavoro è far sì che il mondo riesca a percepirla.",
   "home.finalCta.text": "Se stai iniziando, crescendo o vivendo una nuova fase, possiamo costruire una strategia che traduca ciò che rende unico il tuo brand.",
 
-  "about.hero.label": "Chi siamo",
   "about.hero.headline": "Siamo più di un'agenzia di marketing: siamo costruttori di narrazioni <em>autentiche</em>.",
+  "about.hero.photoAlt": "Julia e Luiz mano nella mano sotto un portale rosso di un tempio giapponese, a Tokyo",
   "about.hero.sub": "Creiamo strategie che riflettono l'essenza unica di ogni brand, elevando la sua presenza in modo sofisticato, creativo e connesso con il pubblico giusto.",
 
-  "about.essence.label": "Essenza",
   "about.essence.title": "La nostra essenza",
   "about.essence.text1": "Ikigai è una parola giapponese che rappresenta ciò che dà senso alla vita: la ragione per cui ci svegliamo ogni giorno. È stato da questo concetto che è nata l'agenzia.",
   "about.essence.text2": "Crediamo che i brand forti non si costruiscano solo per vendere. Nascono da un'intenzione, da una storia e da qualcosa di vero che merita di essere condiviso. Per questo il nostro scopo è accendere lo scopo di ogni brand che arriva fino a noi.",
   "about.essence.text3": "Ci immergiamo nella tua storia, comprendiamo la tua visione e trasformiamo tutto ciò che ti rende unico in una strategia chiara, autentica e rilevante.",
   "about.essence.text4": "Perché quando un brand riconosce la propria essenza, smette di limitarsi a comunicare e inizia a occupare un posto tutto suo nel mondo.",
 
-  "about.founders.label": "Fondatori",
   "about.founders.title": "Chi c'è dietro Ikigai",
   "about.founders.1.role": "Fondatrice e Direttrice Creativa",
+  "about.founders.1.photoAlt": "Julia Rocha, fondatrice e direttrice creativa di Ikigai, in un vicolo illuminato dalle lanterne in Giappone",
   "about.founders.1.bio1": "Ju è la mente creativa e strategica dietro Ikigai.",
   "about.founders.1.bio2": "Appassionata di branding, storytelling e del potere che una buona narrazione ha di trasformare la percezione di un brand, segue da vicino ogni progetto, guidando la strategia, il posizionamento e la direzione creativa dell'agenzia.",
   "about.founders.1.bio3": "Il suo percorso tra Brasile e Giappone ha ampliato il suo sguardo su cultura, comportamento, esperienza e comunicazione. Riferimenti che oggi fanno parte dell'essenza di Ikigai e del modo attento in cui ogni brand viene costruito.",
   "about.founders.1.bio4": "Julia crede che il branding sia in tutto: nel messaggio, nell'estetica, nell'esperienza, nei dettagli e, soprattutto, nel modo in cui un brand fa sentire le persone.",
   "about.founders.1.bio5": "Il suo lavoro è aiutare aziende e imprenditrici a trovare chiarezza su chi sono e a trasformare questa essenza in una presenza autentica, strategica e memorabile.",
   "about.founders.2.role": "Cofondatore e Direttore delle Operazioni",
+  "about.founders.2.photoAlt": "Luiz Eduardo Umeda, cofondatore e direttore delle operazioni di Ikigai, in un vicolo illuminato dalle lanterne in Giappone",
   "about.founders.2.bio1": "Luiz è responsabile di trasformare la visione in struttura.",
   "about.founders.2.bio2": "Alla guida delle aree finanziaria, operativa e amministrativa di Ikigai, organizza i processi che permettono a ogni progetto di essere sviluppato con chiarezza, coerenza ed eccellenza.",
   "about.founders.2.bio3": "Il suo sguardo analitico e strategico completa la direzione creativa dell'agenzia, collegando pianificazione, fattibilità ed esecuzione.",
   "about.founders.2.bio4": "Al fianco di Julia, Luiz partecipa alla costruzione e alla crescita di Ikigai, garantendo che l'esperienza dei clienti sia sostenuta da un'operazione organizzata, vicina e affidabile.",
   "about.founders.together": "Insieme, Julia e Luiz uniscono creatività e struttura, sensibilità e strategia, scopo ed esecuzione.",
 
-  "about.abroad.label": "Internazionale",
   "about.abroad.title": "Il nostro team all'estero",
   "about.abroad.intro": "La nostra presenza internazionale ci permette di seguire da vicino brand e progetti anche negli Stati Uniti, unendo strategia, relazioni e produzione di contenuti locali.",
   "about.abroad.1.role": "Sales Representative — Stati Uniti",
@@ -166,12 +159,10 @@
   "about.abroad.3.bio2": "Come social media manager e videomaker, partecipa alla costruzione delle narrazioni dei brand e trasforma le idee in contenuti dinamici, creativi e connessi con il pubblico.",
   "about.abroad.3.bio3": "La sua presenza sul territorio permette di seguire da vicino la routine, il dietro le quinte e le esperienze dei clienti in Italia, portando autenticità e agilità alle produzioni.",
 
-  "about.perspectives.label": "Il nostro team",
   "about.perspectives.title": "Un team, prospettive diverse",
   "about.perspectives.text1": "Ogni professionista di Ikigai contribuisce con uno sguardo unico. Strategia, branding, direzione creativa, social media, produzione audiovisiva, relazioni e operazioni si connettono affinché ogni progetto sia costruito in modo completo e coerente.",
   "about.perspectives.text2": "Non crediamo in soluzioni generiche. Crediamo nell'ascolto, nella profondità e nella vicinanza. Per questo lavoriamo fianco a fianco con ogni cliente, rispettando la sua storia, il suo momento e i suoi obiettivi.",
 
-  "about.closing.label": "La nostra filosofia",
   "about.closing.title": "I brand autentici iniziano da dentro",
   "about.closing.text1": "Prima di pensare a come un brand sarà visto, cerchiamo di capire chi è veramente.",
   "about.closing.text2": "È da questa essenza che nascono le strategie, i contenuti, le narrazioni e le esperienze che creiamo. Perché un brand può anche attirare l'attenzione con l'estetica, ma è la verità che c'è dietro a far sì che qualcuno rimanga.",
@@ -181,10 +172,8 @@
   "about.banner.line2": "Creare con autenticità.",
   "about.banner.line3": "Impattare con scopo.",
 
-  "services.hero.label": "I nostri servizi",
   "services.hero.headline": "Strategia, creatività e <em>scopo</em> in ogni punto di contatto",
   "services.hero.sub": "Ogni brand ha un'essenza, una storia, un momento e obiettivi diversi. Per questo le nostre soluzioni sono costruite su misura, a partire da ciò che rende unica ogni attività.",
-  "services.lead": "Scopri le nostre soluzioni",
 
   "services.includedTitle": "Cosa può essere incluso",
   "services.audienceLabel": "Per chi è",
@@ -353,14 +342,13 @@
   "services.7.item.9": "Progetti editoriali",
   "services.7.item.10": "Soluzioni visive personalizzate",
 
-  "services.choose.label": "Primo contatto",
   "services.choose.title": "Come scegliere il servizio giusto?",
   "services.choose.text1": "Non devi arrivare da noi sapendo esattamente quale soluzione scegliere.",
   "services.choose.text2": "Durante il primo contatto comprendiamo il momento del tuo brand, le tue sfide e i tuoi obiettivi per indicarti il percorso più adatto.",
   "services.choose.text3": "Parte del nostro lavoro è aiutarti a identificare questa necessità.",
 
-  "contact.hero.label": "Contatto",
   "contact.hero.headline": "Posiziona il tuo brand nel viale più affollato del mondo: <em>internet</em>",
+  "contact.hero.photoAlt": "I fondatori di Ikigai fermi all'incrocio di Ginza, a Tokyo, mentre la folla passa intorno",
 
   "contact.form.desc": "Compila il modulo e ti risponderemo entro 24 ore.",
   "contact.form.name.label": "Nome",

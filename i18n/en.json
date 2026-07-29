@@ -32,14 +32,12 @@
   "home.hero.sub": "Ikigai is a branding and content agency that turns the essence of brands into strategic positioning.",
   "home.hero.scroll": "Scroll",
 
-  "home.intro.label": "Purpose",
   "home.intro.title": "Our purpose is to spark yours.",
   "home.intro.text1": "We believe a brand isn't built only by what it publishes, but by everything it communicates, delivers, and makes someone feel.",
   "home.intro.text2": "That's why we bring together branding, strategy, content, and storytelling to build brands that are coherent from essence to experience.",
   "home.intro.text3": "Here, every project starts with a question: what's the purpose that needs to take shape?",
   "home.intro.link": "Meet Ikigai",
 
-  "home.audience.label": "Who it's for",
   "home.audience.title": "For brands that know they have something special, but need to communicate it clearly.",
   "home.audience.text1": "We work with entrepreneurs, personal brands, service businesses, and companies that want to grow without losing their essence.",
   "home.audience.text2": "Brands that don't just want to show up, but to build meaning, recognition, and connection.",
@@ -50,7 +48,6 @@
   "home.audience.3.title": "For those repositioning",
   "home.audience.3.text": "Who need to align essence, strategy, and expression with a new phase.",
 
-  "home.services.label": "What we do",
   "home.services.title": "Main Services",
   "home.services.cta": "Learn more",
   "home.services.ctaButton": "See all services",
@@ -63,7 +60,6 @@
   "home.services.6.desc": "We build brands from the ground up, combining strategy, naming, and visual identity to create a presence with purpose and personality.",
   "home.services.7.desc": "Websites, catalogs, presentations, e-books, and materials for launches or events, built around your brand's needs.",
 
-  "home.method.label": "Our process",
   "home.method.title": "The Ikigai Method - the 4 Es",
   "home.method.intro1": "We don't start with the post. We start with the brand.",
   "home.method.intro2": "Our process turns what makes a business unique into strategic, recognizable, and coherent communication.",
@@ -76,7 +72,6 @@
   "home.method.4.title": "Experience",
   "home.method.4.text": "We build touchpoints that make the brand perceived, remembered, and felt.",
 
-  "home.projects.label": "Our work",
   "home.projects.title": "Some of the projects made here:",
   "home.projects.1.name": "Monai",
   "home.projects.1.desc": "Full branding and launch of a brand built for people passionate about sports, coffee, and experiences.",
@@ -85,7 +80,6 @@
   "home.projects.3.name": "Mayara Félix",
   "home.projects.3.desc": "Content strategy and positioning for a leader and entrepreneur, turning her journey, business vision, and experiences into narratives that inspire and strengthen her authority.",
 
-  "home.diff.label": "What sets us apart",
   "home.diff.title1": "We're a boutique agency. That means every project here is one of a kind.",
   "home.diff.title2": "Get ready to meet your new favorite agency. Much more than an agency, a partner for your brand.",
   "home.diff.1.title": "Strategic vision",
@@ -126,33 +120,32 @@
   "home.finalCta.title": "Your brand already has an essence. Our job is to make the world able to perceive it.",
   "home.finalCta.text": "Whether you're starting out, growing, or going through a new phase, we can build a strategy that translates what makes your brand unique.",
 
-  "about.hero.label": "About us",
   "about.hero.headline": "We are more than a marketing agency: we are builders of <em>authentic</em> narratives.",
+  "about.hero.photoAlt": "Julia and Luiz holding hands beneath a red Japanese temple gate in Tokyo",
   "about.hero.sub": "We create strategies that reflect each brand's unique essence, elevating its presence in a sophisticated, creative way that connects with the right audience.",
 
-  "about.essence.label": "Essence",
   "about.essence.title": "Our essence",
   "about.essence.text1": "Ikigai is a Japanese word that represents what gives life meaning: the reason we wake up every day. It was from this concept that the agency was born.",
   "about.essence.text2": "We believe strong brands aren't built just to sell. They come from an intention, a story, and something true worth sharing. That's why our purpose is to spark the purpose of every brand that comes to us.",
   "about.essence.text3": "We dive into your story, understand your vision, and turn everything that makes you unique into a clear, authentic, and relevant strategy.",
   "about.essence.text4": "Because when a brand recognizes its essence, it stops merely communicating and starts occupying a place of its own in the world.",
 
-  "about.founders.label": "Founders",
   "about.founders.title": "Who's behind Ikigai",
   "about.founders.1.role": "Founder and Creative Director",
+  "about.founders.1.photoAlt": "Julia Rocha, founder and creative director of Ikigai, in a lantern-lit alley in Japan",
   "about.founders.1.bio1": "Ju is the creative and strategic mind behind Ikigai.",
   "about.founders.1.bio2": "Passionate about branding, storytelling, and the power a good narrative has to transform how a brand is perceived, she stays close to every project, leading strategy, positioning, and the agency's creative direction.",
   "about.founders.1.bio3": "Her path between Brazil and Japan broadened her view on culture, behavior, experience, and communication — references that are now part of Ikigai's essence and the careful way each brand is built.",
   "about.founders.1.bio4": "Julia believes branding is in everything: in the message, the aesthetics, the experience, the details, and above all, in how a brand makes people feel.",
   "about.founders.1.bio5": "Her work is helping businesses and entrepreneurs find clarity about who they are and turn that essence into an authentic, strategic, and memorable presence.",
   "about.founders.2.role": "Co-founder and Director of Operations",
+  "about.founders.2.photoAlt": "Luiz Eduardo Umeda, co-founder and director of operations of Ikigai, in a lantern-lit alley in Japan",
   "about.founders.2.bio1": "Luiz is responsible for turning vision into structure.",
   "about.founders.2.bio2": "Leading Ikigai's finance, operations, and administrative areas, he organizes the processes that let every project be developed with clarity, consistency, and excellence.",
   "about.founders.2.bio3": "His analytical, strategic eye complements the agency's creative direction, connecting planning, feasibility, and execution.",
   "about.founders.2.bio4": "Alongside Julia, Luiz takes part in building and growing Ikigai, making sure the client experience is backed by an organized, close, and reliable operation.",
   "about.founders.together": "Together, Julia and Luiz bring together creativity and structure, sensitivity and strategy, purpose and execution.",
 
-  "about.abroad.label": "International",
   "about.abroad.title": "Our team abroad",
   "about.abroad.intro": "Our international presence lets us stay close to brands and projects in the United States too, combining strategy, relationships, and local content production.",
   "about.abroad.1.role": "Sales Representative — United States",
@@ -166,12 +159,10 @@
   "about.abroad.3.bio2": "As social media manager and videomaker, she takes part in building brand narratives and turns ideas into dynamic, creative content connected to the audience.",
   "about.abroad.3.bio3": "Her local presence keeps her close to clients' routines, behind the scenes, and experiences in Italy, bringing authenticity and speed to production.",
 
-  "about.perspectives.label": "Our team",
   "about.perspectives.title": "One team, different perspectives",
   "about.perspectives.text1": "Every professional at Ikigai brings a unique perspective. Strategy, branding, creative direction, social media, audiovisual production, relationships, and operations connect so every project is built in a complete, coherent way.",
   "about.perspectives.text2": "We don't believe in generic solutions. We believe in listening, depth, and closeness. That's why we work side by side with every client, respecting their story, their moment, and their goals.",
 
-  "about.closing.label": "Our philosophy",
   "about.closing.title": "Authentic brands start from within",
   "about.closing.text1": "Before thinking about how a brand will be seen, we seek to understand who it really is.",
   "about.closing.text2": "It's from that essence that the strategies, content, narratives, and experiences we create come from. Because a brand might catch attention with its aesthetics, but it's the truth behind it that makes someone stay.",
@@ -181,10 +172,8 @@
   "about.banner.line2": "Create with authenticity.",
   "about.banner.line3": "Make an impact with purpose.",
 
-  "services.hero.label": "Our services",
   "services.hero.headline": "Strategy, creativity, and <em>purpose</em> at every touchpoint",
   "services.hero.sub": "Every brand has a different essence, story, moment, and set of goals. That's why our solutions are built in a personalized way, starting from what makes each business unique.",
-  "services.lead": "Explore our solutions",
 
   "services.includedTitle": "What can be included",
   "services.audienceLabel": "Who it's for",
@@ -353,14 +342,13 @@
   "services.7.item.9": "Editorial projects",
   "services.7.item.10": "Custom visual solutions",
 
-  "services.choose.label": "First contact",
   "services.choose.title": "How do you choose the right service?",
   "services.choose.text1": "You don't need to come to us knowing exactly which solution to hire.",
   "services.choose.text2": "During the first conversation, we understand your brand's moment, your challenges, and your goals so we can point to the most suitable path.",
   "services.choose.text3": "Part of our job is helping you identify that need.",
 
-  "contact.hero.label": "Contact",
   "contact.hero.headline": "Position your brand on the busiest avenue in the world: the <em>internet</em>",
+  "contact.hero.photoAlt": "Ikigai's founders standing still at the Ginza crossing in Tokyo while the crowd rushes past",
 
   "contact.form.desc": "Fill out the form and we'll get back to you within 24 hours.",
   "contact.form.name.label": "Name",

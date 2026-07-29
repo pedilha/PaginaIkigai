@@ -61,11 +61,19 @@
     </div>
   </div>
 
-  <section id="main-content" class="hero hero--page section--dark">
-    <div class="hero__gradient" aria-hidden="true"></div>
+  <section id="main-content" class="hero hero--page hero--photo hero--photo-centered section--dark">
+    <picture>
+      <source type="image/webp" media="(max-width: 700px)" srcset="assets/quem-somos-hero-mobile.webp">
+      <source type="image/jpeg" media="(max-width: 700px)" srcset="assets/quem-somos-hero-mobile.jpg">
+      <source type="image/webp" srcset="assets/quem-somos-hero.webp">
+      <img class="hero__photo" src="assets/quem-somos-hero.jpg" width="2400" height="1600"
+           fetchpriority="high" decoding="async"
+           data-i18n="about.hero.photoAlt" data-i18n-attr="alt"
+           alt="Julia e Luiz de mãos dadas sob um portão de templo japonês vermelho, em Tóquio">
+    </picture>
+    <div class="hero__scrim hero__scrim--centered" aria-hidden="true"></div>
     <div class="hero__noise" aria-hidden="true"></div>
     <div class="hero__content">
-      <p class="section-label" data-i18n="about.hero.label">Quem somos</p>
       <h1 class="hero__headline hero__headline--sm" data-i18n-html="about.hero.headline">Somos mais que uma agência de marketing: somos construtores de narrativas <em>autênticas</em>.</h1>
       <p class="hero__sub" data-i18n="about.hero.sub">Criamos estratégias que refletem a essência única de cada marca, elevando sua presença de forma sofisticada, criativa e conectada com o público certo.</p>
       <div class="hero__cta">
@@ -77,7 +85,6 @@
   <section class="section section--warm">
     <div class="container split-grid">
       <div class="reveal">
-        <p class="section-label" data-i18n="about.essence.label">Essência</p>
         <h2 class="section-title" data-i18n="about.essence.title">A nossa essência</h2>
       </div>
       <div class="reveal reveal-d1">
@@ -91,12 +98,18 @@
 
   <section class="section section--dark">
     <div class="container">
-      <p class="section-label reveal" data-i18n="about.founders.label">Fundadores</p>
-      <h2 class="section-title reveal reveal-d1" data-i18n="about.founders.title">Quem está por trás da Ikigai</h2>
+      <h2 class="section-title reveal" data-i18n="about.founders.title">Quem está por trás da Ikigai</h2>
 
       <div class="profile-grid reveal reveal-d2">
         <div>
-          <div class="team-member__seal profile-grid__seal" aria-hidden="true"><span class="team-member__seal-mark">J</span></div>
+          <div class="profile-grid__photo">
+            <picture>
+              <source type="image/webp" srcset="assets/julia.webp">
+              <img src="assets/julia.jpg" width="800" height="1200" loading="lazy" decoding="async"
+                   data-i18n="about.founders.1.photoAlt" data-i18n-attr="alt"
+                   alt="Julia Rocha, fundadora e diretora criativa da Ikigai, em uma viela iluminada no Japão">
+            </picture>
+          </div>
           <h3 class="team-member__name">Julia Rocha</h3>
           <p class="team-member__role" data-i18n="about.founders.1.role">Fundadora e Diretora Criativa</p>
         </div>
@@ -111,7 +124,14 @@
 
       <div class="profile-grid reveal reveal-d3">
         <div>
-          <div class="team-member__seal profile-grid__seal" aria-hidden="true"><span class="team-member__seal-mark">L</span></div>
+          <div class="profile-grid__photo">
+            <picture>
+              <source type="image/webp" srcset="assets/luiz.webp">
+              <img src="assets/luiz.jpg" width="800" height="1200" loading="lazy" decoding="async"
+                   data-i18n="about.founders.2.photoAlt" data-i18n-attr="alt"
+                   alt="Luiz Eduardo Umeda, cofundador e diretor de operações da Ikigai, em uma viela iluminada no Japão">
+            </picture>
+          </div>
           <h3 class="team-member__name">Luiz Eduardo Umeda</h3>
           <p class="team-member__role" data-i18n="about.founders.2.role">Cofundador e Diretor de Operações</p>
         </div>
@@ -129,9 +149,8 @@
 
   <section class="section section--dark">
     <div class="container">
-      <p class="section-label reveal" data-i18n="about.abroad.label">Internacional</p>
-      <h2 class="section-title reveal reveal-d1" data-i18n="about.abroad.title">Nosso time no exterior</h2>
-      <p class="section-desc section-desc--lead reveal reveal-d2" data-i18n="about.abroad.intro">Nossa presença internacional nos permite acompanhar marcas e projetos de forma próxima também nos Estados Unidos, combinando estratégia, relacionamento e produção de conteúdo local.</p>
+      <h2 class="section-title reveal" data-i18n="about.abroad.title">Nosso time no exterior</h2>
+      <p class="section-desc section-desc--lead reveal reveal-d1" data-i18n="about.abroad.intro">Nossa presença internacional nos permite acompanhar marcas e projetos de forma próxima também nos Estados Unidos, combinando estratégia, relacionamento e produção de conteúdo local.</p>
       <div class="team-grid">
         <div class="team-member reveal">
           <div class="team-member__seal" aria-hidden="true"><span class="team-member__seal-mark">A</span></div>
@@ -161,16 +180,14 @@
 
   <section class="section section--warm">
     <div class="container-sm" style="text-align: center;">
-      <p class="section-label reveal" style="justify-content: center;" data-i18n="about.perspectives.label">Nosso time</p>
-      <h2 class="section-title reveal reveal-d1" data-i18n="about.perspectives.title">Um time, diferentes perspectivas</h2>
-      <p class="section-desc reveal reveal-d2" style="margin-inline: auto; margin-bottom: var(--space-sm);" data-i18n="about.perspectives.text1">Cada profissional da Ikigai contribui com um olhar único. Estratégia, branding, direção criativa, social media, produção audiovisual, relacionamento e operação se conectam para que cada projeto seja construído de forma completa e coerente.</p>
-      <p class="section-desc reveal reveal-d2" style="margin-inline: auto;" data-i18n="about.perspectives.text2">Não acreditamos em soluções genéricas. Acreditamos em escuta, profundidade e proximidade. Por isso, trabalhamos lado a lado com cada cliente, respeitando sua história, seu momento e seus objetivos.</p>
+      <h2 class="section-title reveal" data-i18n="about.perspectives.title">Um time, diferentes perspectivas</h2>
+      <p class="section-desc reveal reveal-d1" style="margin-inline: auto; margin-bottom: var(--space-sm);" data-i18n="about.perspectives.text1">Cada profissional da Ikigai contribui com um olhar único. Estratégia, branding, direção criativa, social media, produção audiovisual, relacionamento e operação se conectam para que cada projeto seja construído de forma completa e coerente.</p>
+      <p class="section-desc reveal reveal-d1" style="margin-inline: auto;" data-i18n="about.perspectives.text2">Não acreditamos em soluções genéricas. Acreditamos em escuta, profundidade e proximidade. Por isso, trabalhamos lado a lado com cada cliente, respeitando sua história, seu momento e seus objetivos.</p>
     </div>
   </section>
 
   <section class="section section--surface">
     <div class="container-sm reveal" style="text-align: center;">
-      <p class="section-label" style="justify-content: center;" data-i18n="about.closing.label">Nossa filosofia</p>
       <h2 class="section-title" data-i18n="about.closing.title">Marcas autênticas começam de dentro</h2>
       <p class="section-desc" style="margin-inline: auto; margin-bottom: 0.85em;" data-i18n="about.closing.text1">Antes de pensar em como uma marca será vista, buscamos compreender quem ela realmente é.</p>
       <p class="section-desc" style="margin-inline: auto; margin-bottom: var(--space-md);" data-i18n="about.closing.text2">É dessa essência que surgem as estratégias, os conteúdos, as narrativas e as experiências que criamos. Porque uma marca pode até chamar atenção pela estética, mas é a verdade que existe por trás dela que faz alguém permanecer.</p>
@@ -199,7 +216,7 @@
         <p class="footer__tagline" data-i18n="footer.tagline">Somos mais que uma agência de marketing: somos construtores de narrativas autênticas que refletem a essência única de cada marca.</p>
         <div class="footer__contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <span>+81 070 91892615</span>
+          <span>+55 62 99154-2722</span>
         </div>
         <div class="footer__contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
@@ -207,7 +224,7 @@
         </div>
       </div>
       <div class="footer__actions">
-        <a href="https://api.whatsapp.com/send?phone=817091892615&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
+        <a href="https://api.whatsapp.com/send?phone=5562991542722&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
         <a href="contato.html" class="btn btn--outline" data-i18n="cta.quote">Solicite um orçamento</a>
         <div class="footer__social">
           <a href="https://www.instagram.com/agencia.ikigai/" target="_blank" rel="noopener" aria-label="Instagram">

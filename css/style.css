@@ -360,6 +360,68 @@ select { appearance: none; }
 }
 .hero__headline--sm { font-size: var(--text-3xl); }
 
+/* ===== HERO WITH PHOTO ===== */
+/* The two figures are dead centre horizontally, and a wide box crops the 3:2
+   photo vertically only — so they can't be nudged sideways. The type is
+   anchored to the base instead: separating them vertically is the one axis
+   we actually control, and it holds at every screen width. */
+.hero--photo {
+  /* Full viewport: nothing from the next section should peek below the fold. */
+  min-height: 100vh;
+  min-height: 100dvh;
+  justify-content: flex-end;
+  padding-block: calc(var(--header-h) + var(--space-lg)) var(--space-lg);
+}
+.hero__photo {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  /* ── ENQUADRAMENTO DA FOTO ──
+     O 2º valor controla a altura visível: 0% mostra o topo da imagem
+     (empurra as pessoas para baixo), 100% mostra a base (puxa para cima).
+     O 1º valor faz o mesmo na horizontal. */
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+/* Weighted to follow the type: a light wash at the very top just for the
+   fixed header, clearing through the middle so the faces and the neon read,
+   then ramping up through the lower third where the headline sits.
+   The photo is a night scene, so anything past ~0.85 turns it black. */
+.hero__scrim {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom,
+    oklch(0.12 0.008 50 / 0.58) 0%,
+    oklch(0.12 0.008 50 / 0.24) 20%,
+    oklch(0.12 0.008 50 / 0.20) 42%,
+    oklch(0.12 0.008 50 / 0.55) 68%,
+    oklch(0.12 0.008 50 / 0.84) 88%,
+    oklch(0.12 0.008 50 / 0.92) 100%);
+}
+/* Centred variant: for frames where the subject sits low and small in the
+   composition, the type can hold the middle without covering anyone.
+   Padding is tighter than the top-anchored variant — centred content only
+   needs to clear the fixed header, not sit below it. */
+.hero--photo-centered {
+  justify-content: center;
+  padding-block: calc(var(--header-h) + var(--space-md)) var(--space-md);
+}
+/* Type answers to viewport HEIGHT as well as width. Width alone lets a long
+   headline overflow a short window; the vh cap keeps the whole block —
+   headline, subtitle and button — inside one screen, with no scroll. */
+.hero--photo-centered .hero__headline { font-size: min(var(--text-3xl), 9vh); }
+.hero--photo-centered .hero__sub { font-size: min(var(--text-base), 2.4vh); }
+/* A daylight frame is far brighter than the night one, so the wash has to be
+   stronger and more even — weighted through the middle, where the type sits. */
+.hero__scrim.hero__scrim--centered {
+  background: linear-gradient(to bottom,
+    oklch(0.12 0.008 50 / 0.52) 0%,
+    oklch(0.12 0.008 50 / 0.62) 28%,
+    oklch(0.12 0.008 50 / 0.72) 50%,
+    oklch(0.12 0.008 50 / 0.64) 74%,
+    oklch(0.12 0.008 50 / 0.52) 100%);
+}
+.hero--photo .hero__noise { z-index: 2; }
+.hero--photo .hero__content { z-index: 3; }
+
 /* ===== SECTION DIVIDER ===== */
 .section-divider {
   line-height: 0; margin-top: -1px;
@@ -724,8 +786,19 @@ select { appearance: none; }
   border-bottom: 1px solid var(--border-dark);
 }
 .profile-grid:last-child { border-bottom: none; }
-.profile-grid__seal { width: 96px; }
 .profile-grid__bio p:not(:last-child) { margin-bottom: 0.85em; }
+/* Native 2:3 of the source frames, so nothing gets cropped. Kept in colour:
+   the neon in these portraits carries the Brazil-Japan story. */
+.profile-grid__photo {
+  aspect-ratio: 2 / 3; border-radius: var(--r-md); overflow: hidden;
+  margin-bottom: var(--space-sm); background: var(--dark-card);
+}
+.profile-grid__photo picture { display: block; width: 100%; height: 100%; }
+.profile-grid__photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.profile-grid:hover .profile-grid__photo img { transform: scale(1.03); }
 
 /* ===== MANTRA LINE ===== */
 .mantra-line {
@@ -958,7 +1031,8 @@ select { appearance: none; }
   .method-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .diff-item { grid-template-columns: 1fr; gap: 0.35rem; }
   .profile-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
-  .profile-grid__seal { width: 72px; }
+  /* Stacked, the portrait would run the full width and eat the fold — cap it. */
+  .profile-grid__photo { max-width: 280px; }
   .hamburger { display: flex; }
   .header { display: flex; justify-content: space-between; gap: var(--space-sm); }
   .logo { flex-shrink: 0; }
@@ -971,6 +1045,10 @@ select { appearance: none; }
   /* Secondary-page hero has no subtitle/scroll-indicator to balance the
      home hero's 30vh top offset, so it collapses into dead empty space. */
   .hero--page { min-height: auto; padding-block: calc(var(--header-h) + var(--space-lg)) var(--space-xl); }
+  /* Full-screen on mobile too. In a tall narrow box the crop is horizontal,
+     so the vertical framing above stops mattering; centring keeps the
+     subjects in view. */
+  .hero--photo { min-height: 100vh; min-height: 100dvh; }
   .hero--page .hero__content { padding-top: 0; }
   .hero--page .hero__headline { margin-bottom: var(--space-sm); }
   .hero__circle--1, .hero__circle--2, .hero__circle--3 { width: 300px; height: 300px; }
