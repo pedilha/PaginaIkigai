@@ -403,35 +403,43 @@ select { appearance: none; }
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(to bottom,
-    oklch(0.12 0.008 50 / 0.58) 0%,
-    oklch(0.12 0.008 50 / 0.24) 20%,
-    oklch(0.12 0.008 50 / 0.20) 42%,
-    oklch(0.12 0.008 50 / 0.55) 68%,
-    oklch(0.12 0.008 50 / 0.84) 88%,
-    oklch(0.12 0.008 50 / 0.92) 100%);
+    oklch(0.12 0.008 50 / 0.42) 0%,
+    oklch(0.12 0.008 50 / 0.18) 20%,
+    oklch(0.12 0.008 50 / 0.15) 42%,
+    oklch(0.12 0.008 50 / 0.40) 68%,
+    oklch(0.12 0.008 50 / 0.62) 88%,
+    oklch(0.12 0.008 50 / 0.72) 100%);
 }
 /* Centred variant: for frames where the subject sits low and small in the
-   composition, the type can hold the middle without covering anyone.
-   Padding is tighter than the top-anchored variant — centred content only
-   needs to clear the fixed header, not sit below it. */
-.hero--photo-centered {
-  justify-content: center;
-  padding-block: calc(var(--header-h) + var(--space-md)) var(--space-md);
+   composition, the type can hold the middle without covering anyone —
+   in theory. In practice "centred" (50vh) put the CTA's bottom edge only
+   ~20px above the couple's heads at common laptop ratios, and getting
+   worse was one shorter/wider window away. Padding-based reserves don't
+   fix that safely: they add to the flex layout's total height, so a big
+   enough reserve just reintroduces the scroll this variant exists to
+   avoid. Anchoring the block by its own centre at a fixed 34vh — via
+   absolute position, outside document flow entirely — decouples "stays
+   in one screen" from "stays off the subjects': the block can never grow
+   into overflow (it's sized by content, not flow), and 34 instead of 50
+   buys a fixed ~16vh of headroom above the couple on every viewport. */
+.hero--photo-centered .hero__content {
+  position: absolute; top: 34vh; left: 50%; transform: translate(-50%, -50%);
+  width: calc(100% - 2 * var(--space-md));
 }
 /* Type answers to viewport HEIGHT as well as width. Width alone lets a long
    headline overflow a short window; the vh cap keeps the whole block —
    headline, subtitle and button — inside one screen, with no scroll. */
-.hero--photo-centered .hero__headline { font-size: min(var(--text-3xl), 9vh); }
-.hero--photo-centered .hero__sub { font-size: min(var(--text-base), 2.4vh); }
+.hero--photo-centered .hero__headline { font-size: min(var(--text-3xl), 8vh); }
+.hero--photo-centered .hero__sub { font-size: min(var(--text-base), 2vh); }
 /* A daylight frame is far brighter than the night one, so the wash has to be
    stronger and more even — weighted through the middle, where the type sits. */
 .hero__scrim.hero__scrim--centered {
   background: linear-gradient(to bottom,
-    oklch(0.12 0.008 50 / 0.52) 0%,
-    oklch(0.12 0.008 50 / 0.62) 28%,
-    oklch(0.12 0.008 50 / 0.72) 50%,
-    oklch(0.12 0.008 50 / 0.64) 74%,
-    oklch(0.12 0.008 50 / 0.52) 100%);
+    oklch(0.12 0.008 50 / 0.26) 0%,
+    oklch(0.12 0.008 50 / 0.34) 28%,
+    oklch(0.12 0.008 50 / 0.42) 50%,
+    oklch(0.12 0.008 50 / 0.36) 74%,
+    oklch(0.12 0.008 50 / 0.26) 100%);
 }
 .hero--photo .hero__noise { z-index: 2; }
 .hero--photo .hero__content { z-index: 3; }
@@ -1238,6 +1246,10 @@ select { appearance: none; }
   .hero--photo-left .hero__content { text-align: center; max-width: 100%; }
   .hero--photo-left .hero__cta { justify-content: center; }
   .hero__scrim.hero__scrim--left { background: oklch(0.12 0.008 50 / 0.68); }
+  /* The fixed-34vh anchor is a desktop fix for a wide/short crop problem —
+     on mobile the crop is vertical (full width, cropped top/bottom) and
+     the generic centred flow above already keeps content clear. */
+  .hero--photo-centered .hero__content { position: static; top: auto; left: auto; transform: none; width: auto; }
   .hero--page .hero__content { padding-top: 0; }
   .hero--page .hero__headline { margin-bottom: var(--space-sm); }
   .hero__circle--1, .hero__circle--2, .hero__circle--3 { width: 300px; height: 300px; }
