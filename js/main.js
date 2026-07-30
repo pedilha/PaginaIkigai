@@ -268,6 +268,21 @@
     );
   }
 
+  // ===== SPOTLIGHT CARDS (roster) =====
+  // Tracks the pointer per-card (not viewport-wide) and writes its position
+  // as CSS custom properties the .roster-card::before gradient reads —
+  // the one idea worth keeping from a React "glow card" reference, minus
+  // the framework and the rainbow hue-shift.
+  if (!prefersReducedMotion) {
+    document.querySelectorAll('.roster-card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--spot-x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        card.style.setProperty('--spot-y', ((e.clientY - rect.top) / rect.height * 100) + '%');
+      });
+    });
+  }
+
   // ===== ACTIVE NAV =====
   const path = window.location.pathname;
   document.querySelectorAll('.nav a, .mobile-nav a').forEach(a => {

@@ -213,7 +213,9 @@ select { appearance: none; }
 
 /* ===== HERO ===== */
 .hero {
-  height: 100vh; height: 100dvh;
+  /* min-height, not height: a fixed height clips the content instead of
+     letting the section grow when the headline wraps on a short window. */
+  min-height: 100vh; min-height: 100dvh;
   display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
   padding: var(--header-h) var(--space-md) var(--space-md);
   position: relative; overflow: hidden;
@@ -742,63 +744,127 @@ select { appearance: none; }
 .testimonial__role { font-size: var(--text-xs); color: var(--text-muted); }
 
 /* ===== TEAM ===== */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); }
-/* Curated pair layout: centered, capped width, instead of stretching two
-   cards across the full container like empty grid slots are missing. */
-.team-grid--duo { grid-template-columns: repeat(2, minmax(220px, 340px)); justify-content: center; gap: var(--space-lg); }
-.team-member__photo {
-  aspect-ratio: 3 / 4; border-radius: var(--r-md); overflow: hidden;
-  margin-bottom: var(--space-sm); background: var(--dark-card);
-}
-.team-member__photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(100%) contrast(1.05); transition: filter 0.6s var(--ease-out);
-}
-.team-member:hover .team-member__photo img { filter: grayscale(0%) contrast(1); }
-/* Seal placeholder: stands in for a portrait before one is shot. A single
-   italic initial on an ember-tinted ground, echoing the hanko/"seal of
-   purpose" motif, instead of a generic gray "photo missing" box. */
-.team-member__seal {
-  aspect-ratio: 3 / 4; border-radius: var(--r-md); overflow: hidden;
-  margin-bottom: var(--space-sm);
-  background: radial-gradient(120% 100% at 50% 0%, var(--orange-subtle), var(--dark-card) 65%);
-  border: 1px solid var(--border-dark);
-  display: grid; place-items: center;
-  transition: border-color 0.4s var(--ease-smooth), transform 0.4s var(--ease-out);
-}
-.team-member:hover .team-member__seal { border-color: oklch(0.62 0.18 55 / 0.5); transform: translateY(-2px); }
-.team-member__seal-mark {
-  font-family: var(--font-display); font-style: italic; font-weight: 400;
-  font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem);
-  color: var(--orange); opacity: 0.8;
-  transition: opacity 0.4s var(--ease-smooth);
-}
-.team-member:hover .team-member__seal-mark { opacity: 1; }
+/* Shared by the founder profiles and the roster rows. The card grid and the
+   seal placeholder that used to live here went out with the photo swap. */
 .team-member__name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; margin-bottom: 0.2rem; }
 .team-member__role { font-size: var(--text-xs); color: var(--orange); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-xs); }
-.team-member__bio { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6; }
+/* Context-aware: this bio now appears on both dark (founders) and warm
+   (roster) sections, so the muted tone can't be hard-coded to one mode. */
+.team-member__bio { font-size: var(--text-sm); line-height: 1.6; }
+.section--dark .team-member__bio, .section--surface .team-member__bio { color: var(--text-muted); }
+.section--warm .team-member__bio { color: var(--text-muted-warm); }
 .team-member__bio:not(:last-child) { margin-bottom: 0.75em; }
 
-/* ===== PROFILE GRID (founders) ===== */
-.profile-grid {
-  display: grid; grid-template-columns: minmax(200px, 260px) 1fr; gap: var(--space-lg);
-  align-items: start; padding-block: var(--space-lg);
+/* ===== ROSTER (secondary team) — spotlight card grid ===== */
+/* Cards stay dark even on the warm section (same call as .service-detail__card)
+   so the portraits and the glow effect below read consistently either way. */
+.roster { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-lg); }
+.roster-card {
+  position: relative; border-radius: var(--r-lg); overflow: hidden;
+  background: var(--dark-card); border: 1px solid var(--border-dark);
+  transition: transform 0.4s var(--ease-smooth);
+}
+.roster-card:hover { transform: translateY(-4px); }
+/* Spotlight glow: a JS pointermove listener (main.js) tracks the cursor
+   position relative to each card and writes it to --spot-x/--spot-y; these
+   two pseudo-elements just read those vars. This is the same idea as the
+   React "glow card" reference — a masked gradient ring (::before) plus a
+   soft ambient wash (::after) — rebuilt in plain CSS since the reference
+   is a React/Tailwind/shadcn component and this site has none of the
+   three (no bundler, no npm dependency graph at all). Brand orange only,
+   no rainbow hue-shift, and gated to hover rather than always-on. */
+.roster-card::before {
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  border-radius: inherit; padding: 2px;
+  background:
+    radial-gradient(60px 60px at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.97 0.02 55), transparent 70%),
+    radial-gradient(200px 200px at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.68 0.19 55), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0; transition: opacity 0.5s var(--ease-smooth);
+}
+.roster-card::after {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(280px 280px at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.62 0.18 55 / 0.22), transparent 70%);
+  opacity: 0; transition: opacity 0.5s var(--ease-smooth);
+}
+.roster-card:hover::before, .roster-card:hover::after { opacity: 1; }
+
+/* Kept in colour like the founders' photos, no grayscale filter — the
+   neon/location carries the Brazil-Japan-abroad story. */
+.roster-card__photo { aspect-ratio: 4 / 5; overflow: hidden; position: relative; z-index: 1; }
+.roster-card__photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+.roster-card:hover .roster-card__photo img { transform: scale(1.04); }
+/* The card's own background is always dark, regardless of which section
+   (dark or warm) wraps it — text needs to match that, not the section. */
+.roster-card__body { padding: var(--space-md); position: relative; z-index: 2; color: var(--text-on-dark); }
+.roster-card .team-member__bio { color: var(--text-muted); }
+
+/* ===== FOUNDER CARD (editorial) ===== */
+/* Alternating photo/name-plate treatment for Julia and Luiz. The name
+   overlaps the portrait's lower edge (scrim underneath for contrast) instead
+   of sitting in a caption below it — the two-weight display name is the
+   focal point, per DESIGN.md's weight-gap rule (light first name / bold
+   surname), and the circular CTA reuses .service-item__arrow's interaction. */
+.founder-card {
+  display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: var(--space-xl);
+  align-items: start; padding-block: var(--space-xl);
   border-bottom: 1px solid var(--border-dark);
 }
-.profile-grid:last-child { border-bottom: none; }
-.profile-grid__bio p:not(:last-child) { margin-bottom: 0.85em; }
-/* Native 2:3 of the source frames, so nothing gets cropped. Kept in colour:
-   the neon in these portraits carries the Brazil-Japan story. */
-.profile-grid__photo {
-  aspect-ratio: 2 / 3; border-radius: var(--r-md); overflow: hidden;
-  margin-bottom: var(--space-sm); background: var(--dark-card);
+.founder-card:last-child { border-bottom: none; }
+.founder-card--reverse { direction: rtl; }
+.founder-card--reverse > * { direction: ltr; }
+
+.founder-card__portrait {
+  position: relative; aspect-ratio: 2 / 3; border-radius: var(--r-md); overflow: hidden;
+  background: var(--dark-card);
 }
-.profile-grid__photo picture { display: block; width: 100%; height: 100%; }
-.profile-grid__photo img {
+.founder-card__portrait picture { display: block; width: 100%; height: 100%; }
+.founder-card__portrait img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s var(--ease-out);
 }
-.profile-grid:hover .profile-grid__photo img { transform: scale(1.03); }
+.founder-card:hover .founder-card__portrait img { transform: scale(1.03); }
+
+.founder-card__scrim {
+  position: absolute; inset: auto 0 0 0; height: 60%;
+  background: linear-gradient(to top, oklch(0.08 0.01 50 / 0.9) 0%, transparent 100%);
+  pointer-events: none;
+}
+.founder-card__plate {
+  position: absolute; left: var(--space-sm); right: calc(var(--space-sm) + 64px); bottom: var(--space-sm);
+  display: flex; flex-direction: column; line-height: 0.95;
+}
+.founder-card__first {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: var(--text-lg); color: var(--text-on-dark);
+}
+.founder-card__last {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--text-xl); color: var(--text-on-dark);
+}
+
+.founder-card__cta {
+  position: absolute; right: var(--space-sm); bottom: var(--space-sm);
+  width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+  background: var(--orange); display: grid; place-items: center;
+  transition: transform 0.5s var(--ease-out), box-shadow 0.4s var(--ease-smooth);
+}
+.founder-card__cta svg { width: 20px; height: 20px; stroke: var(--dark); stroke-width: 2; }
+.founder-card:hover .founder-card__cta { transform: rotate(-45deg) scale(1.08); box-shadow: 0 6px 24px var(--orange-glow); }
+.founder-card__cta:active { transform: rotate(-45deg) scale(0.96); }
+.founder-card__cta:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+.founder-card__content { padding-top: var(--space-xs); }
+.founder-card__role {
+  font-size: var(--text-xs); color: var(--orange); text-transform: uppercase;
+  letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-sm);
+}
 
 /* ===== MANTRA LINE ===== */
 .mantra-line {
@@ -887,24 +953,6 @@ select { appearance: none; }
 }
 .post-grid__item:hover { border-color: var(--orange); }
 
-/* ===== BANNER ===== */
-.banner {
-  position: relative; min-height: 65vh;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
-}
-.banner--sm { min-height: 50vh; }
-.banner__bg {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, oklch(0.14 0.02 50), oklch(0.08 0.015 240));
-}
-.banner__bg--parallax { will-change: transform; }
-.banner__content {
-  position: relative; z-index: var(--z-base); text-align: center;
-  padding: var(--space-lg) var(--space-md); max-width: 750px;
-}
-.banner__text { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; line-height: 1.4; }
-.banner__text em { font-style: italic; color: var(--orange); font-weight: 300; }
-
 /* ===== CTA SECTION ===== */
 .cta-section { text-align: center; padding-block: var(--space-xl); }
 .cta-section__title {
@@ -939,10 +987,16 @@ select { appearance: none; }
 .form__success h3 { font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: 0.5rem; }
 
 /* ===== METHOD (4Es) ===== */
-.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg) var(--space-xl); margin-top: var(--space-xl); }
-.method-step__num { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--orange); opacity: 0.25; line-height: 1; margin-bottom: var(--space-xs); }
+/* One row, not a 2x2 block: four SEQUENTIAL stages need an unambiguous
+   left-to-right reading order, which a grid of quadrants doesn't give.
+   No number, no separate mark — the capitalized first word of each title
+   already carries the "all four start with E" detail (in Portuguese; the
+   translated titles don't share a letter, so nothing here depends on it). */
+.method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg) var(--space-md); margin-top: var(--space-xl); }
+.method-step { padding-top: var(--space-sm); border-top: 1px solid var(--border-warm); }
+.section--dark .method-step { border-color: var(--border-dark); }
 .method-step__title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; margin-bottom: 0.5rem; }
-.method-step__text { font-size: var(--text-sm); line-height: 1.6; max-width: 40ch; }
+.method-step__text { font-size: var(--text-sm); line-height: 1.6; }
 .section--warm .method-step__text { color: var(--text-muted-warm); }
 .section--dark .method-step__text { color: var(--text-muted); }
 
@@ -1024,15 +1078,18 @@ select { appearance: none; }
 @media (max-width: 1024px) {
   .service-detail { grid-template-columns: 1fr; gap: var(--space-md); }
   .service-detail--flip { direction: ltr; }
+  .roster { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .nav { display: none; }
   .split-grid { grid-template-columns: 1fr; }
   .method-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .diff-item { grid-template-columns: 1fr; gap: 0.35rem; }
-  .profile-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
-  /* Stacked, the portrait would run the full width and eat the fold — cap it. */
-  .profile-grid__photo { max-width: 280px; }
+  .roster { grid-template-columns: 1fr; }
+  .founder-card, .founder-card--reverse { grid-template-columns: 1fr; direction: ltr; gap: var(--space-sm); }
+  /* Stays prominent (the whole point of this redesign) but capped so it
+     doesn't run edge-to-edge once stacked. */
+  .founder-card__portrait { max-width: 340px; margin-inline: auto; width: 100%; }
   .hamburger { display: flex; }
   .header { display: flex; justify-content: space-between; gap: var(--space-sm); }
   .logo { flex-shrink: 0; }
@@ -1066,12 +1123,9 @@ select { appearance: none; }
   .prefooter__text { font-size: 20vw; }
   .footer__grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .team-grid--duo { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 @media (max-width: 480px) {
-  .team-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .video-stack { flex-direction: column; }
   .video-placeholder:nth-child(2) { margin-top: 0; }
