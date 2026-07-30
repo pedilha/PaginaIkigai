@@ -417,13 +417,14 @@ select { appearance: none; }
    worse was one shorter/wider window away. Padding-based reserves don't
    fix that safely: they add to the flex layout's total height, so a big
    enough reserve just reintroduces the scroll this variant exists to
-   avoid. Anchoring the block by its own centre at a fixed 34vh — via
+   avoid. Anchoring the block by its own centre at a fixed 41vh — via
    absolute position, outside document flow entirely — decouples "stays
-   in one screen" from "stays off the subjects': the block can never grow
-   into overflow (it's sized by content, not flow), and 34 instead of 50
-   buys a fixed ~16vh of headroom above the couple on every viewport. */
+   in one screen" from "stays off the subjects": the block can never grow
+   into overflow (it's sized by content, not flow). 41 rather than 50
+   buys real headroom above the couple without crowding the header the
+   way a more aggressive shift (tried first at 34) did on wider frames. */
 .hero--photo-centered .hero__content {
-  position: absolute; top: 34vh; left: 50%; transform: translate(-50%, -50%);
+  position: absolute; top: 41vh; left: 50%; transform: translate(-50%, -50%);
   width: calc(100% - 2 * var(--space-md));
 }
 /* Type answers to viewport HEIGHT as well as width. Width alone lets a long
