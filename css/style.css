@@ -1221,10 +1221,6 @@ select { appearance: none; }
   .logo { flex-shrink: 0; }
   .lang-switch { order: 2; margin-left: auto; }
   .hamburger { order: 3; }
-  /* The open mobile-nav panel has its own language switcher further down;
-     the header's copy sits at a higher z-index and was showing through
-     above it at the same time, so hide it while the panel is open. */
-  body:has(.mobile-nav.open) .header .lang-switch { display: none; }
   .hero { height: auto; min-height: 100vh; min-height: 100dvh; align-items: center; justify-content: center; }
   .hero__content { text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 30vh; }
   .hero__headline { margin-bottom: 10vh; }
