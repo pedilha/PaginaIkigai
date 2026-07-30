@@ -27,7 +27,7 @@
 
   // ===== SCROLL REVEAL =====
   if (!prefersReducedMotion) {
-    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const els = document.querySelectorAll('.reveal:not([data-loop]), .reveal-left:not([data-loop]), .reveal-right:not([data-loop])');
     if (els.length) {
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -35,6 +35,16 @@
         });
       }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
       els.forEach(el => io.observe(el));
+    }
+
+    // [data-loop] elements animate back out on the way past too, instead
+    // of staying revealed forever once first seen.
+    const loopEls = document.querySelectorAll('[data-loop]');
+    if (loopEls.length) {
+      const loopIo = new IntersectionObserver(entries => {
+        entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting));
+      }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+      loopEls.forEach(el => loopIo.observe(el));
     }
   }
 

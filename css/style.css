@@ -1030,10 +1030,27 @@ select { appearance: none; }
 .section--warm .method-step__text { color: var(--text-muted-warm); }
 .section--dark .method-step__text { color: var(--text-muted); }
 
-/* ===== PROJECT SHOWCASE ===== */
-.project-showcase__image { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 3; background: var(--dark-card); }
-.project-showcase__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
-.project-showcase__image:hover img { transform: scale(1.04); }
+/* ===== PROJECT STACK (sticky scroll cards) ===== */
+/* Pure CSS — no JS. Every card sticks at the same offset, so as you scroll
+   each new one slides up and settles on top of the last, covering it. */
+.project-stack {
+  max-width: var(--max-w); margin-inline: auto; padding-inline: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.project-card {
+  position: sticky; top: calc(var(--header-h) + var(--space-sm));
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: var(--space-lg);
+  background: var(--dark-card); border: 1px solid var(--border-dark);
+  border-radius: var(--r-lg); padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 24px 60px -24px oklch(0.08 0.01 50 / 0.6);
+}
+.project-card:last-child { margin-bottom: 0; }
+.project-card__title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-sm); }
+.project-card__text { font-size: var(--text-base); line-height: 1.7; color: var(--text-muted); }
+.project-card__media { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4 / 3; }
+.project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
+.project-card:hover .project-card__media img { transform: scale(1.04); }
 
 /* ===== DIFFERENTIATORS LIST ===== */
 .diff-list { display: flex; flex-direction: column; margin-top: var(--space-lg); }
@@ -1120,6 +1137,7 @@ select { appearance: none; }
   .diff-item { grid-template-columns: 1fr; gap: 0.35rem; }
   .roster-card { flex-direction: column; min-height: 0; }
   .roster-card__photo { width: 100%; aspect-ratio: 4 / 3; }
+  .project-card { grid-template-columns: 1fr; top: var(--header-h); padding: var(--space-md); }
   .founder-card, .founder-card--reverse { grid-template-columns: 1fr; direction: ltr; gap: var(--space-sm); }
   /* Stays prominent (the whole point of this redesign) but capped so it
      doesn't run edge-to-edge once stacked. */
