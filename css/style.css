@@ -368,11 +368,6 @@ select { appearance: none; }
   padding-block: calc(var(--header-h) + var(--space-lg)) var(--space-lg);
 }
 .hero--page .hero__content { max-width: 1000px; }
-.hero--page .hero__gradient {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(60% 55% at 50% 30%, var(--orange-glow) 0%, transparent 70%);
-  filter: blur(90px);
-}
 .hero__headline--sm { font-size: var(--text-3xl); }
 
 /* ===== HERO WITH PHOTO ===== */
@@ -436,6 +431,34 @@ select { appearance: none; }
 }
 .hero--photo .hero__noise { z-index: 2; }
 .hero--photo .hero__content { z-index: 3; }
+
+/* Left-anchored variant: for a frame where the subject sits dead centre
+   and a centred block would run type straight across their face — pin the
+   content to the open side instead of fighting the composition. */
+.hero--photo-left {
+  justify-content: center;
+  padding-block: calc(var(--header-h) + var(--space-md)) var(--space-md);
+}
+.hero--photo-left .hero__content { margin-inline: 0; text-align: left; max-width: 460px; }
+.hero--photo-left .hero__cta { justify-content: flex-start; }
+/* This frame's subject and the sign's lettering both sit in the top half —
+   the shared 62% default crops toward the bottom, which would cut into
+   both of them, so pull the crop back up toward the top instead. */
+.hero--photo-left .hero__photo { object-position: 50% 65%; }
+/* Type answers to viewport HEIGHT as well as width, same reasoning as
+   .hero--photo-centered — a long headline in a narrow (480px) column
+   wraps to several lines, and at the default hero size that alone can run
+   past one screen. */
+.hero--photo-left .hero__headline { font-size: min(var(--text-2xl), 8.5vh); }
+.hero--photo-left .hero__sub { font-size: min(var(--text-sm), 3.1vh); }
+/* Solid near the text, gone by the point the subject starts — darkens the
+   open (left) side of the frame without touching the subject at all. */
+.hero__scrim.hero__scrim--left {
+  background: linear-gradient(to right,
+    oklch(0.12 0.008 50 / 0.7) 0%,
+    oklch(0.12 0.008 50 / 0.55) 32%,
+    transparent 48%);
+}
 
 /* ===== SECTION DIVIDER ===== */
 .section-divider {
@@ -1051,20 +1074,38 @@ select { appearance: none; }
 }
 .project-card {
   position: sticky; top: calc(var(--header-h) + var(--space-sm));
-  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: var(--space-lg);
+  overflow: hidden;
+  min-height: 440px;
   background: var(--dark-card); border: 1px solid var(--border-dark);
-  border-radius: var(--r-lg); padding: var(--space-lg);
+  border-radius: var(--r-lg);
   margin-bottom: var(--space-md);
   box-shadow: 0 24px 60px -24px oklch(0.08 0.01 50 / 0.6);
 }
 .project-card:last-child { margin-bottom: 0; }
 .project-card__title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-sm); }
 .project-card__text { font-size: var(--text-base); line-height: 1.7; color: var(--text-muted); }
-.project-card__media { position: relative; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4 / 3; }
-.project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
+
+/* Photo sits behind everything, filling the right half of the card at full
+   height (object-fit: cover keeps every source photo cropping cleanly to
+   that box, whatever its native aspect ratio — no shrinking to a narrow
+   strip like a natural-aspect crop would for a portrait photo). A short,
+   soft gradient blends just its inner edge into the card's own background
+   colour rather than washing the whole photo out. */
+.project-card__media { position: absolute; inset: 0; z-index: 0; }
+.project-card__media img { position: absolute; top: 0; right: 0; width: 50%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
 .project-card:hover .project-card__media img { transform: scale(1.04); }
+.project-card__media::after {
+  content: ''; position: absolute; inset: 0;
+  /* The photo itself only starts at the 50% mark — the fade needs to sit
+     right on top of it (not finish before it), or the photo's edge stays
+     a hard cut and the gradient just fades over empty background. */
+  background: linear-gradient(to right, var(--dark-card) 0%, var(--dark-card) 50%, transparent 68%);
+}
+
+.project-card__body { position: relative; z-index: 1; max-width: 46%; padding: var(--space-lg); }
+
 .project-card__social {
-  position: absolute; right: var(--space-sm); bottom: var(--space-sm);
+  position: absolute; right: var(--space-sm); bottom: var(--space-sm); z-index: 2;
   width: 48px; height: 48px; border-radius: 50%;
   background: var(--orange); display: grid; place-items: center;
   transition: transform 0.5s var(--ease-out), box-shadow 0.4s var(--ease-smooth);
@@ -1159,7 +1200,14 @@ select { appearance: none; }
   .diff-item { grid-template-columns: 1fr; gap: 0.35rem; }
   .roster-card { flex-direction: column; min-height: 0; }
   .roster-card__photo { width: 100%; aspect-ratio: 4 / 3; }
-  .project-card { grid-template-columns: 1fr; top: var(--header-h); padding: var(--space-md); }
+  /* The fluid photo-into-text dissolve needs width to breathe — on a narrow
+     screen it would either crush the text column or bury it under the
+     image, so fall back to a plain stacked layout instead. */
+  .project-card { top: var(--header-h); min-height: 0; }
+  .project-card__media { position: static; aspect-ratio: 4 / 3; }
+  .project-card__media img { position: static; width: 100%; height: 100%; }
+  .project-card__media::after { display: none; }
+  .project-card__body { position: static; max-width: 100%; padding: var(--space-md); }
   .founder-card, .founder-card--reverse { grid-template-columns: 1fr; direction: ltr; gap: var(--space-sm); }
   /* Stays prominent (the whole point of this redesign) but capped so it
      doesn't run edge-to-edge once stacked. */
@@ -1169,6 +1217,10 @@ select { appearance: none; }
   .logo { flex-shrink: 0; }
   .lang-switch { order: 2; margin-left: auto; }
   .hamburger { order: 3; }
+  /* The open mobile-nav panel has its own language switcher further down;
+     the header's copy sits at a higher z-index and was showing through
+     above it at the same time, so hide it while the panel is open. */
+  body:has(.mobile-nav.open) .header .lang-switch { display: none; }
   .hero { height: auto; min-height: 100vh; min-height: 100dvh; align-items: center; justify-content: center; }
   .hero__content { text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 30vh; }
   .hero__headline { margin-bottom: 10vh; }
@@ -1180,6 +1232,12 @@ select { appearance: none; }
      so the vertical framing above stops mattering; centring keeps the
      subjects in view. */
   .hero--photo { min-height: 100vh; min-height: 100dvh; }
+  /* The left/right split only works with room to breathe — on a narrow
+     screen the crop tightens onto the subject and there's no clear side
+     left for type, so fall back to centred text over a flat, even wash. */
+  .hero--photo-left .hero__content { text-align: center; max-width: 100%; }
+  .hero--photo-left .hero__cta { justify-content: center; }
+  .hero__scrim.hero__scrim--left { background: oklch(0.12 0.008 50 / 0.68); }
   .hero--page .hero__content { padding-top: 0; }
   .hero--page .hero__headline { margin-bottom: var(--space-sm); }
   .hero__circle--1, .hero__circle--2, .hero__circle--3 { width: 300px; height: 300px; }
