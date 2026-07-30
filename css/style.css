@@ -67,6 +67,7 @@ select { appearance: none; }
 .container    { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--space-md); }
 .container-sm { max-width: var(--max-w-narrow); margin-inline: auto; padding-inline: var(--space-md); }
 .split-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: start; }
+.split-grid--center { align-items: center; }
 
 /* ===== SKIP LINK ===== */
 .skip-link {
@@ -193,6 +194,14 @@ select { appearance: none; }
 .section--surface { background: var(--dark-surface); color: var(--text-on-dark); }
 .section--warm { background: var(--warm); color: var(--text-on-warm); }
 .section--orange { background: var(--orange); color: var(--dark); }
+/* Fills the viewport and centers its content vertically instead of relying
+   on padding-block to space it out — lets a section occupy exactly one
+   screen without needing to scroll inside it to see the rest. */
+.section--fullscreen {
+  min-height: 100vh; min-height: 100dvh;
+  padding-block: var(--space-lg);
+  display: flex; align-items: center;
+}
 
 .section-label {
   font-size: var(--text-xs); font-weight: 600;
@@ -206,6 +215,10 @@ select { appearance: none; }
   font-weight: 700; line-height: 1.12; margin-bottom: var(--space-sm);
   text-wrap: balance;
 }
+/* For a title that's a full sentence rather than a short punchy phrase —
+   at the default size a long sentence wraps to 5-6 lines and dominates
+   the section. */
+.section-title--md { font-size: var(--text-xl); }
 .section-desc { font-size: var(--text-lg); max-width: 60ch; line-height: 1.65; }
 .section-desc--lead { margin-bottom: var(--space-lg); }
 .section--dark .section-desc { color: var(--text-muted); }
@@ -755,12 +768,13 @@ select { appearance: none; }
 .section--warm .team-member__bio { color: var(--text-muted-warm); }
 .team-member__bio:not(:last-child) { margin-bottom: 0.75em; }
 
-/* ===== ROSTER (secondary team) — spotlight card grid ===== */
+/* ===== ROSTER (secondary team) — horizontal spotlight cards ===== */
 /* Cards stay dark even on the warm section (same call as .service-detail__card)
    so the portraits and the glow effect below read consistently either way. */
-.roster { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-top: var(--space-lg); }
+.roster { display: flex; flex-direction: column; gap: var(--space-md); margin-top: var(--space-lg); }
 .roster-card {
-  position: relative; border-radius: var(--r-lg); overflow: hidden;
+  position: relative; display: flex; align-items: stretch; min-height: 260px;
+  border-radius: var(--r-lg); overflow: hidden;
   background: var(--dark-card); border: 1px solid var(--border-dark);
   transition: transform 0.4s var(--ease-smooth);
 }
@@ -793,8 +807,13 @@ select { appearance: none; }
 .roster-card:hover::before, .roster-card:hover::after { opacity: 1; }
 
 /* Kept in colour like the founders' photos, no grayscale filter — the
-   neon/location carries the Brazil-Japan-abroad story. */
-.roster-card__photo { aspect-ratio: 4 / 5; overflow: hidden; position: relative; z-index: 1; }
+   neon/location carries the Brazil-Japan-abroad story. Width (not
+   aspect-ratio) is fixed here: height comes from the body's text via the
+   flex row's stretch, so a short bio doesn't crush the photo flat. */
+.roster-card__photo {
+  width: clamp(200px, 26vw, 320px); flex-shrink: 0;
+  overflow: hidden; position: relative; z-index: 1;
+}
 .roster-card__photo img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.5s var(--ease-out);
@@ -802,7 +821,10 @@ select { appearance: none; }
 .roster-card:hover .roster-card__photo img { transform: scale(1.04); }
 /* The card's own background is always dark, regardless of which section
    (dark or warm) wraps it — text needs to match that, not the section. */
-.roster-card__body { padding: var(--space-md); position: relative; z-index: 2; color: var(--text-on-dark); }
+.roster-card__body {
+  padding: var(--space-lg); position: relative; z-index: 2; color: var(--text-on-dark);
+  display: flex; flex-direction: column; justify-content: center;
+}
 .roster-card .team-member__bio { color: var(--text-muted); }
 
 /* ===== FOUNDER CARD (editorial) ===== */
@@ -882,7 +904,6 @@ select { appearance: none; }
 .service-detail:last-child { border-bottom: none; }
 .service-detail--flip { direction: rtl; }
 .service-detail--flip > * { direction: ltr; }
-.service-detail__number { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--orange); opacity: 0.2; line-height: 1; margin-bottom: var(--space-sm); }
 .service-detail__title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-sm); text-wrap: balance; }
 .service-detail__text { font-size: var(--text-base); line-height: 1.7; margin-bottom: var(--space-sm); }
 .section--dark .service-detail__text { color: var(--text-muted); }
@@ -926,9 +947,18 @@ select { appearance: none; }
 .section--warm .service-detail__card .tag-list__item { border-color: var(--border-dark); color: var(--text-muted); }
 
 .checklist { display: flex; flex-direction: column; gap: 0.85rem; }
-.checklist__item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: var(--text-sm); line-height: 1.5; }
+/* One accent color throughout (orange), not brand-orange-plus-checkmark-green. */
+.checklist__item {
+  display: flex; align-items: flex-start; gap: 0.75rem; font-size: var(--text-sm); line-height: 1.5;
+  opacity: 0; transform: translateX(10px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+.reveal.visible .checklist__item, .reveal-left.visible .checklist__item, .reveal-right.visible .checklist__item {
+  opacity: 1; transform: none;
+}
 .checklist__icon {
-  width: 22px; height: 22px; border-radius: 50%; background: var(--green-check);
+  width: 22px; height: 22px; border-radius: 50%; background: var(--orange);
   display: grid; place-items: center; flex-shrink: 0; margin-top: 2px;
 }
 .checklist__icon svg { width: 12px; height: 12px; stroke: var(--dark); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -1078,14 +1108,18 @@ select { appearance: none; }
 @media (max-width: 1024px) {
   .service-detail { grid-template-columns: 1fr; gap: var(--space-md); }
   .service-detail--flip { direction: ltr; }
-  .roster { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .nav { display: none; }
   .split-grid { grid-template-columns: 1fr; }
+  /* Stacked, the two columns' combined height easily exceeds one screen —
+     forcing min-height:100vh here would centre-crop instead of just
+     flowing, so let it size to content like every other section. */
+  .section--fullscreen { min-height: auto; padding-block: var(--space-xl); }
   .method-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .diff-item { grid-template-columns: 1fr; gap: 0.35rem; }
-  .roster { grid-template-columns: 1fr; }
+  .roster-card { flex-direction: column; min-height: 0; }
+  .roster-card__photo { width: 100%; aspect-ratio: 4 / 3; }
   .founder-card, .founder-card--reverse { grid-template-columns: 1fr; direction: ltr; gap: var(--space-sm); }
   /* Stays prominent (the whole point of this redesign) but capped so it
      doesn't run edge-to-edge once stacked. */
@@ -1140,6 +1174,7 @@ select { appearance: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
+  .checklist__item { opacity: 1; transform: none; }
   .hero__headline .word { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }

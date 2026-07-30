@@ -283,6 +283,15 @@
     });
   }
 
+  // ===== CHECKLIST STAGGER =====
+  // Numbers each list's items so the CSS transition-delay cascades them in
+  // one after another, instead of the whole checklist fading in as one block.
+  document.querySelectorAll('.checklist').forEach(list => {
+    list.querySelectorAll(':scope > .checklist__item').forEach((item, i) => {
+      item.style.setProperty('--i', i);
+    });
+  });
+
   // ===== ACTIVE NAV =====
   const path = window.location.pathname;
   document.querySelectorAll('.nav a, .mobile-nav a').forEach(a => {
