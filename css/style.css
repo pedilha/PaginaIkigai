@@ -130,8 +130,12 @@ select { appearance: none; }
   display: flex; align-items: center; gap: 2px;
   background: oklch(0.18 0.005 50); border-radius: var(--r-pill);
   padding: 3px; border: 1px solid var(--border-dark);
-  width: fit-content; flex-shrink: 0; justify-self: end;
+  width: fit-content; flex-shrink: 0;
 }
+/* Only meaningful in .header's grid — reused inside .mobile-nav (a flex
+   column), where justify-self still applies and was shoving it into the
+   corner instead of letting it centre with the rest of the menu. */
+.header .lang-switch { justify-self: end; }
 .lang-switch__btn {
   font-family: var(--font-body); font-size: 0.65rem; font-weight: 600;
   letter-spacing: 0.05em; text-transform: uppercase;
