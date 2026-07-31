@@ -368,8 +368,12 @@
   "contact.form.message.placeholder": "Raccontaci brevemente di cosa hai bisogno...",
   "contact.form.requiredError": "Campo obbligatorio",
   "contact.form.submit": "Invia messaggio",
+  "contact.form.submitting": "Invio in corso...",
   "contact.form.success.title": "Messaggio inviato!",
   "contact.form.success.text": "Grazie per averci contattato. Ti risponderemo presto.",
+  "contact.form.success.another": "Invia un altro messaggio",
+  "contact.form.error.title": "Non è stato possibile inviare",
+  "contact.form.error.text": "Qualcosa è andato storto durante l'invio. Riprova oppure scrivici su WhatsApp.",
 
   "contact.sidebar.whatsapp.title": "Preferisci parlare direttamente?",
   "contact.sidebar.whatsapp.text": "Se preferisci, contattaci direttamente su WhatsApp. Rispondiamo velocemente.",

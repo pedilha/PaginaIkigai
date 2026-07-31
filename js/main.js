@@ -87,43 +87,6 @@
     });
   }
 
-  // ===== PARALLAX =====
-  if (!prefersReducedMotion) {
-    const pEls = document.querySelectorAll('.banner__bg--parallax');
-    if (pEls.length) {
-      let ticking = false;
-      const pIo = new IntersectionObserver(entries =>
-        entries.forEach(e => e.target.dataset.active = e.isIntersecting ? '1' : '0')
-      );
-      pEls.forEach(el => pIo.observe(el));
-      window.addEventListener('scroll', () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-          pEls.forEach(el => {
-            if (el.dataset.active !== '1') return;
-            const rect = el.parentElement.getBoundingClientRect();
-            el.style.transform = `translateY(${(rect.top - window.innerHeight * 0.5) * 0.12}px) scale(1.12)`;
-          });
-          ticking = false;
-        });
-      }, { passive: true });
-    }
-  }
-
-  // ===== PORTFOLIO DRAG =====
-  document.querySelectorAll('.portfolio-scroll').forEach(c => {
-    let down = false, sx, sl;
-    c.addEventListener('mousedown', e => { down = true; sx = e.pageX - c.offsetLeft; sl = c.scrollLeft; });
-    c.addEventListener('mouseleave', () => down = false);
-    c.addEventListener('mouseup', () => down = false);
-    c.addEventListener('mousemove', e => {
-      if (!down) return;
-      e.preventDefault();
-      c.scrollLeft = sl - (e.pageX - c.offsetLeft - sx) * 1.5;
-    });
-  });
-
   // ===== FAN CAROUSEL =====
   const fanStage = document.querySelector('.fan__stage');
   if (fanStage) {
@@ -252,10 +215,20 @@
   }
 
   // ===== FORM =====
+  // Submits to Web3Forms (api.web3forms.com) — the site is static (GitHub
+  // Pages), so this is the only backend. access_key lives as a hidden field
+  // in contato.html, per Web3Forms' own integration model (it's a public
+  // per-site key, not a secret).
   const form = document.querySelector('.form');
   if (form) {
-    form.addEventListener('submit', e => {
+    const submitBtn = form.querySelector('.form__submit');
+    const successBox = document.querySelector('.form__success');
+    const errorBox = document.querySelector('.form__error-banner');
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+      errorBox?.classList.remove('visible');
+
       let valid = true;
       form.querySelectorAll('[required]').forEach(f => {
         const p = f.closest('.form__field');
@@ -268,14 +241,41 @@
         email.classList.add('error'); valid = false;
       }
       if (!valid) return;
-      form.style.display = 'none';
-      document.querySelector('.form__success')?.classList.add('visible');
+
+      const idleLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = window.__ikigaiT?.('contact.form.submitting') || idleLabel;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const data = await res.json().catch(() => null);
+        if (!res.ok || !data?.success) throw new Error(data?.message || 'submit failed');
+
+        form.style.display = 'none';
+        successBox?.classList.add('visible');
+        form.reset();
+      } catch {
+        errorBox?.classList.add('visible');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = idleLabel;
+      }
     });
     form.querySelectorAll('[required]').forEach(f =>
       f.addEventListener('input', () => {
         if (f.value.trim()) { f.closest('.form__field').classList.remove('has-error'); f.classList.remove('error'); }
       })
     );
+
+    // "Send another message" — bring the form back after a successful send.
+    document.querySelector('.form__success-reset')?.addEventListener('click', () => {
+      successBox?.classList.remove('visible');
+      form.style.display = '';
+    });
   }
 
   // ===== SPOTLIGHT CARDS (roster) =====
