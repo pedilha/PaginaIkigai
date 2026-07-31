@@ -82,7 +82,11 @@
         <h2 class="section-title" data-i18n="cta.quote">Solicite um orçamento</h2>
         <p class="section-desc" style="margin-bottom: var(--space-md);" data-i18n="contact.form.desc">Preencha o formulário e entraremos em contato em até 24 horas.</p>
 
-        <form class="form" action="#" method="POST" novalidate>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="a19ea3c2-201e-4fdb-b4f8-d65304d4b693">
+          <input type="hidden" name="subject" value="Novo contato via site — Agência Ikigai">
+          <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="form__row">
             <div class="form__field">
               <label class="form__label" for="name" data-i18n="contact.form.name.label">Nome</label>
@@ -122,12 +126,18 @@
             <span class="form__error" data-i18n="contact.form.requiredError">Campo obrigatório</span>
           </div>
 
-          <button type="submit" class="btn btn--orange" style="align-self: flex-start; margin-top: var(--space-xs);" data-i18n="contact.form.submit">Enviar mensagem</button>
+          <button type="submit" class="btn btn--orange form__submit" style="align-self: flex-start; margin-top: var(--space-xs);" data-i18n="contact.form.submit" data-label-idle="contact.form.submit" data-label-busy="contact.form.submitting">Enviar mensagem</button>
         </form>
 
-        <div class="form__success">
+        <div class="form__success" role="status" aria-live="polite">
           <h3 data-i18n="contact.form.success.title">Mensagem enviada!</h3>
           <p data-i18n="contact.form.success.text">Obrigado pelo contato. Retornaremos em breve.</p>
+          <button type="button" class="btn btn--outline-dark form__success-reset" data-i18n="contact.form.success.another">Enviar outra mensagem</button>
+        </div>
+
+        <div class="form__error-banner" role="alert" aria-live="assertive">
+          <h3 data-i18n="contact.form.error.title">Não foi possível enviar</h3>
+          <p data-i18n="contact.form.error.text">Algo deu errado ao enviar sua mensagem. Tente novamente ou fale com a gente pelo WhatsApp.</p>
         </div>
       </div>
 

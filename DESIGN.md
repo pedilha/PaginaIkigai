@@ -181,10 +181,10 @@ O sistema é predominantemente flat. Profundidade é comunicada por cor (dark �
 - **Quote:** Literata italic, aspas tipográficas em Ember Orange como `::before`.
 - **Navegação:** Botões circulares 44px com border e backdrop-blur. Dots com escala animada no ativo.
 
-### Sticky Gallery (Portfólio)
-- **Layout:** Grid 3 colunas. Centro sticky (`top: var(--header-h)`, `height: calc(100vh - header)`). Laterais scrollam.
-- **Imagens:** Radius 12px, hover scale 1.04. Alt text descritivo obrigatório.
-- **Mobile:** 2 colunas, terceira escondida. Sticky mantido.
+### Project Stack (Projetos Selecionados)
+- **Layout:** Cards `position: sticky` no mesmo offset (`top: var(--header-h)`), empilhando conforme o scroll — cada novo card cobre o anterior. Sem JS, puro CSS.
+- **Conteúdo:** Foto ocupa a metade direita do card (`object-fit: cover`), com gradiente para o fundo do card na borda interna; texto na metade esquerda.
+- **Mobile:** Colapsa para layout empilhado estático (foto acima, texto abaixo), sem sticky.
 
 ### Language Switcher
 - **Shape:** Pill container com 3 botões internos. Ativo: Ember Orange fill. Inativo: transparente, texto muted.

@@ -368,8 +368,12 @@
   "contact.form.message.placeholder": "Tell us a bit about what you need...",
   "contact.form.requiredError": "Required field",
   "contact.form.submit": "Send message",
+  "contact.form.submitting": "Sending...",
   "contact.form.success.title": "Message sent!",
   "contact.form.success.text": "Thanks for reaching out. We'll get back to you soon.",
+  "contact.form.success.another": "Send another message",
+  "contact.form.error.title": "Couldn't send your message",
+  "contact.form.error.text": "Something went wrong while sending your message. Please try again or reach out on WhatsApp.",
 
   "contact.sidebar.whatsapp.title": "Prefer to talk directly?",
   "contact.sidebar.whatsapp.text": "If you'd rather, reach out directly on WhatsApp. We reply fast.",

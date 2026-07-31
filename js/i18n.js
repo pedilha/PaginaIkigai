@@ -48,6 +48,13 @@
     document.documentElement.lang = getSavedLang() === 'pt' ? 'pt-BR' : getSavedLang();
   }
 
+  // Lets other scripts (main.js's form handler) read a translated string for
+  // the current language without duplicating the fetch/cache logic here.
+  window.__ikigaiT = function(key) {
+    const lang = getSavedLang();
+    return cache[lang]?.[key];
+  };
+
   function updateSwitcher(lang) {
     document.querySelectorAll('.lang-switch__btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
