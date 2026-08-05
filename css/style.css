@@ -640,7 +640,9 @@ select { appearance: none; }
   transition: transform 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
 }
 .testimonial-card:hover { transform: translateY(-4px); border-color: oklch(0.62 0.18 55 / 0.4); }
-.testimonial-card--featured { grid-column: 1 / -1; }
+/* Spans 2 of 3 columns (not the full row) so the 5th, plain testimonial can
+   sit alongside it instead of being stranded alone under a full-width row. */
+.testimonial-card--featured { grid-column: span 2; }
 .testimonial-card--featured .testimonial__quote { font-size: var(--text-lg); max-width: 65ch; }
 
 @media (max-width: 900px) {
