@@ -866,7 +866,42 @@ select { appearance: none; }
 .service-detail__card--inverted { background: var(--dark); border-color: var(--border-dark); color: var(--text-on-dark); }
 .service-detail__card-title { font-family: var(--font-display); font-size: var(--text-base); margin-bottom: 0.5rem; }
 
-/* Nested, titled sub-lists inside a service card (options, phases, groups) */
+/* Inline photo in the text column — Branding Completo only. Ratio is 4/5,
+   not the usual wide crop, because the source is a moodboard/brand-board
+   grid with readable swatches and type; a wider crop would cut into the
+   grid instead of just trimming empty background like a candid photo
+   would. Capped width so it reads as a considered inline image rather
+   than stretching across the whole text column. */
+.service-detail__media {
+  max-width: 460px; aspect-ratio: 4 / 5; border-radius: var(--r-md); overflow: hidden;
+  margin-block: var(--space-sm); border: 1px solid var(--border-dark);
+}
+.section--warm .service-detail__media { border-color: var(--border-warm); }
+.service-detail__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
+.service-detail__media:hover img { transform: scale(1.03); }
+
+/* Media rail — real Instagram reels/stories as proof of work, placed in the
+   text column (not the checklist card) so they read as a citation rather
+   than competing with the card. Two side by side, story aspect ratio. */
+.media-rail { display: flex; gap: 0.9rem; max-width: 440px; margin-block: var(--space-sm); }
+.media-rail__item {
+  position: relative; flex: 1; aspect-ratio: 9 / 16; border-radius: var(--r-md);
+  overflow: hidden; border: 1px solid var(--border-dark); display: block;
+}
+.section--warm .media-rail__item { border-color: var(--border-warm); }
+.media-rail__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
+.media-rail__item:hover img { transform: scale(1.05); }
+.media-rail__badge {
+  position: absolute; inset: auto 6px 6px 6px; background: oklch(0.12 0.008 50 / 0.78);
+  border-radius: var(--r-sm); padding: 0.3rem 0.4rem; display: flex; align-items: center; gap: 0.3rem;
+  font-size: 0.58rem; color: var(--text-on-dark); line-height: 1.2;
+  opacity: 0; transform: translateY(4px);
+  transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+.media-rail__item:hover .media-rail__badge { opacity: 1; transform: none; }
+.media-rail__badge svg { width: 9px; height: 9px; stroke: var(--orange); fill: none; stroke-width: 2.2; flex-shrink: 0; }
+
+/* Nested, titled sub-lists inside a card (options, phases, groups) */
 .spec-group + .spec-group { margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border-dark); }
 .spec-group__title {
   font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
@@ -896,14 +931,15 @@ select { appearance: none; }
 /* Cards stay dark even on warm sections, so re-assert the dark treatment inside them. */
 .section--warm .service-detail__card .tag-list__item { border-color: var(--border-dark); color: var(--text-muted); }
 
-/* Two columns by default (fewer, sometimes-longer items in the flat,
-   top-level checklists); spec-group checklists get a third column below —
-   they hold more, shorter items and need the density more. */
-.checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 1rem; }
-.spec-group .checklist { grid-template-columns: repeat(3, 1fr); }
-/* One accent color throughout (orange), not brand-orange-plus-checkmark-green. */
+/* Single running column, dash marker instead of a checkmark-in-a-circle —
+   quieter and more editorial than a multi-column grid, and it sidesteps
+   the grid's uneven-row problem entirely (every item just stacks). Costs
+   more vertical height on the longest lists; accepted trade for services
+   that also carry a photo now, where a denser grid would fight the image. */
+.checklist { display: flex; flex-direction: column; gap: 0.65rem; }
+.spec-group .checklist { gap: 0.5rem; }
 .checklist__item {
-  display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.8rem; line-height: 1.35;
+  display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.85rem; line-height: 1.6;
   opacity: 0; transform: translateX(10px);
   transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
   transition-delay: calc(var(--i, 0) * 45ms);
@@ -911,22 +947,7 @@ select { appearance: none; }
 .reveal.visible .checklist__item, .reveal-left.visible .checklist__item, .reveal-right.visible .checklist__item {
   opacity: 1; transform: none;
 }
-.checklist__icon {
-  width: 18px; height: 18px; border-radius: 50%; background: var(--orange);
-  display: grid; place-items: center; flex-shrink: 0; margin-top: 1px;
-}
-.checklist__icon svg { width: 10px; height: 10px; stroke: var(--dark); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-/* The multi-column checklist only exists to save vertical space on a wide,
-   one-screen-per-service desktop layout — below the point where
-   .service-detail itself stacks to one column, the card is narrow enough
-   that 2-3 columns crush every item into an unreadable single word per
-   line, so give the space back. */
-@media (max-width: 1024px) {
-  .spec-group .checklist { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
-  .checklist, .spec-group .checklist { grid-template-columns: 1fr; }
-}
+.checklist__item::before { content: '\2013'; color: var(--orange); flex-shrink: 0; font-weight: 600; }
 
 /* ===== CTA SECTION ===== */
 .cta-section { text-align: center; padding-block: var(--space-xl); }

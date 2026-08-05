@@ -15,6 +15,7 @@
   "cta.brandDna": "Build your brand's DNA",
   "cta.tellProject": "Tell us about your project",
   "cta.talkToIkigai": "Talk to Ikigai",
+  "services.media.instagram": "View on Instagram",
 
   "services.1.name": "Content Strategy",
   "services.2.name": "Creative Content",
@@ -203,6 +204,8 @@
   "services.2.tagline": "Content and visuals designed to truly communicate",
   "services.2.text1": "We bring together writing, design, editing, and audiovisual production so you receive content aligned with your brand and only have to worry about publishing.",
   "services.2.text2": "The service can be hired in different formats, according to the needs of the project.",
+  "services.2.media.1.alt": "Real content piece produced by Ikigai for the Monai brand",
+  "services.2.media.2.alt": "Real creative video produced by Ikigai for a photography profile",
   "services.2.audience": "For brands that need professional content but don't require full social media management.",
   "services.2.recordingNote": "Filming is available depending on location and team availability in Brazil, Japan, and the United States.",
   "services.2.group.1.title": "Option 01 — Writing and design",
@@ -230,6 +233,8 @@
   "services.3.tagline": "Real-time stories (mobile)",
   "services.3.text1": "We capture events, launches, trips, and experiences, turning everything that happens into strategic content published in real time.",
   "services.3.text2": "We build a narrative so that everyone following on social media can understand the context, feel the atmosphere, and live the key moments alongside the brand.",
+  "services.3.media.1.alt": "Real story coverage by Ikigai, showing the Cérebro em Foco event team during a workshop",
+  "services.3.media.2.alt": "Real story coverage by Ikigai at a live show, with the artist performing for the crowd",
   "services.3.item.1": "Prior alignment",
   "services.3.item.2": "Narrative planning",
   "services.3.item.3": "Behind the scenes",
@@ -292,6 +297,7 @@
 
   "services.6.tagline": "Built from the ground up",
   "services.6.text1": "We build brands from strategy through to visual identity. It's a complete process for turning an idea into a brand with purpose, personality, and a visual expression that matches what it wants to represent.",
+  "services.6.photoAlt": "Monai brand board with color palette, logo, and poster applications, developed by Ikigai",
   "services.6.text2": "Branding doesn't start with the logo. First we understand the essence, the market, and the brand's direction. Then we turn that strategy into a name, an identity, and a visual language.",
   "services.6.audience": "For businesses being born or that need to completely rebuild their brand.",
   "services.6.group.1.title": "Brand DNA",

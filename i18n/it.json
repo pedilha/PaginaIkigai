@@ -15,6 +15,7 @@
   "cta.brandDna": "Costruisci il DNA del tuo brand",
   "cta.tellProject": "Raccontaci il tuo progetto",
   "cta.talkToIkigai": "Parla con Ikigai",
+  "services.media.instagram": "Guarda su Instagram",
 
   "services.1.name": "Strategia di Contenuto",
   "services.2.name": "Contenuto Creativo",
@@ -203,6 +204,8 @@
   "services.2.tagline": "Contenuti e visual pensati per comunicare davvero",
   "services.2.text1": "Uniamo scrittura, design, montaggio e produzione audiovisiva così che tu riceva contenuti allineati al tuo brand e debba preoccuparti solo di pubblicare.",
   "services.2.text2": "Il servizio può essere richiesto in diversi formati, in base alle esigenze del progetto.",
+  "services.2.media.1.alt": "Contenuto reale prodotto da Ikigai per il brand Monai",
+  "services.2.media.2.alt": "Video creativo reale prodotto da Ikigai per un profilo di fotografia",
   "services.2.audience": "Per brand che hanno bisogno di contenuti professionali, ma non della gestione completa dei social.",
   "services.2.recordingNote": "Le riprese sono disponibili in base alla località e alla disponibilità del team in Brasile, Giappone e Stati Uniti.",
   "services.2.group.1.title": "Opzione 01 — Scrittura e design",
@@ -230,6 +233,8 @@
   "services.3.tagline": "Storie in tempo reale (mobile)",
   "services.3.text1": "Documentiamo eventi, lanci, viaggi ed esperienze, trasformando tutto ciò che accade in contenuto strategico pubblicato in tempo reale.",
   "services.3.text2": "Costruiamo una narrazione perché chi segue dai social possa capire il contesto, sentire l'atmosfera e vivere i momenti principali insieme al brand.",
+  "services.3.media.1.alt": "Copertura reale di storie di Ikigai, con il team dell'evento Cérebro em Foco durante un workshop",
+  "services.3.media.2.alt": "Copertura reale di storie di Ikigai durante uno show dal vivo, con l'artista sul palco",
   "services.3.item.1": "Allineamento preliminare",
   "services.3.item.2": "Pianificazione della narrazione",
   "services.3.item.3": "Dietro le quinte",
@@ -292,6 +297,7 @@
 
   "services.6.tagline": "Costruzione da zero",
   "services.6.text1": "Costruiamo brand dalla strategia fino all'identità visiva. È un processo completo per trasformare un'idea in un brand con scopo, personalità e un'espressione visiva coerente con ciò che vuole rappresentare.",
+  "services.6.photoAlt": "Board del brand Monai con palette colori, logotipo e applicazioni su poster, sviluppato da Ikigai",
   "services.6.text2": "Il branding non inizia dal logo. Prima comprendiamo l'essenza, il mercato e la direzione del brand. Poi trasformiamo questa strategia in nome, identità e linguaggio visivo.",
   "services.6.audience": "Per attività che stanno nascendo o che hanno bisogno di ricostruire completamente il proprio brand.",
   "services.6.group.1.title": "DNA del brand",
