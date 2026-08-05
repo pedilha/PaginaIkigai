@@ -535,7 +535,10 @@ select { appearance: none; }
 
 /* ===== PRÉ-FOOTER ===== */
 .prefooter { position: relative; padding: 0; overflow: hidden; line-height: 0; }
-.prefooter__photo { width: 100%; height: auto; aspect-ratio: 4 / 1; object-fit: cover; display: block; }
+/* Height formula carried over from the old CSS-text wordmark this replaced
+   (its clamp()'d font-size × 0.85 line-height) so the band occupies the
+   same vertical space as before — only its content changed, not its size. */
+.prefooter__photo { width: 100%; height: clamp(5.1rem, 3.4rem + 11.9vw, 15.3vw); object-fit: cover; display: block; }
 
 /* ===== SERVICES LIST ===== */
 .section--services { padding-block: var(--space-2xl); }
@@ -1179,6 +1182,7 @@ select { appearance: none; }
   .section-divider svg { height: 24px; }
   .marquee__item { font-size: clamp(1.5rem, 1rem + 3vw, 2.5rem); }
   .marquee__sep { width: 8px; height: 8px; }
+  .prefooter__photo { height: 17vw; }
   .footer__grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
