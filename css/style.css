@@ -534,30 +534,8 @@ select { appearance: none; }
 }
 
 /* ===== PRÉ-FOOTER ===== */
-.prefooter {
-  position: relative;
-  padding: 0; overflow: hidden;
-  line-height: 0.85;
-}
-/* Brand pattern ("estampa"), recoloured to a flat orange with the white
-   knocked out to alpha, at low opacity — texture behind the wordmark
-   rather than a loud print. */
-.prefooter::before {
-  content: ''; position: absolute; inset: 0;
-  background: url('../assets/estampa-pattern.webp') repeat;
-  background-size: 200px 200px;
-  opacity: 0.14;
-  pointer-events: none;
-}
-.prefooter__text {
-  position: relative; z-index: 1;
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(6rem, 4rem + 14vw, 18vw);
-  text-align: center; text-transform: uppercase;
-  letter-spacing: -0.03em;
-  color: oklch(0.25 0.008 50);
-  transform: translateY(18%);
-}
+.prefooter { position: relative; padding: 0; overflow: hidden; line-height: 0; }
+.prefooter__photo { width: 100%; height: auto; aspect-ratio: 4 / 1; object-fit: cover; display: block; }
 
 /* ===== SERVICES LIST ===== */
 .section--services { padding-block: var(--space-2xl); }
@@ -1201,7 +1179,6 @@ select { appearance: none; }
   .section-divider svg { height: 24px; }
   .marquee__item { font-size: clamp(1.5rem, 1rem + 3vw, 2.5rem); }
   .marquee__sep { width: 8px; height: 8px; }
-  .prefooter__text { font-size: 20vw; }
   .footer__grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
