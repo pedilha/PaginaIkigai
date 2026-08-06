@@ -368,6 +368,8 @@
   "contact.form.email.error": "E-mail non valida",
   "contact.form.company.label": "Azienda / Brand",
   "contact.form.company.placeholder": "Nome della tua azienda o brand",
+  "contact.form.phone.label": "Telefono",
+  "contact.form.phone.placeholder": "(00) 00000-0000",
   "contact.form.service.label": "Servizio di interesse",
   "contact.form.service.placeholder": "Seleziona un servizio",
   "contact.form.service.other": "Altro",
