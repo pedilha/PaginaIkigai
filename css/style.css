@@ -640,14 +640,22 @@ select { appearance: none; }
   transition: transform 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
 }
 .testimonial-card:hover { transform: translateY(-4px); border-color: oklch(0.62 0.18 55 / 0.4); }
-/* Spans 2 of 3 columns (not the full row) so the 5th, plain testimonial can
-   sit alongside it instead of being stranded alone under a full-width row. */
+/* Spans 2 of 3 columns (not the full row) so the plain testimonial next to it
+   can sit alongside instead of being stranded alone under a full-width row. */
 .testimonial-card--featured { grid-column: span 2; }
 .testimonial-card--featured .testimonial__quote { font-size: var(--text-lg); max-width: 65ch; }
+/* Same 2-of-3 span as --featured, but without the enlarged quote — this one
+   is wide purely to fill the row next to the stacked pair, not to read as
+   the standout testimonial. */
+.testimonial-card--wide { grid-column: span 2; }
+/* Two shorter quotes stacked in a single grid cell so their combined height
+   matches a taller neighboring card instead of leaving empty space under
+   them when the grid's shared row height is set by the tallest card. */
+.testimonial-stack { display: flex; flex-direction: column; gap: var(--space-md); }
 
 @media (max-width: 900px) {
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonial-card--featured { grid-column: 1 / -1; }
+  .testimonial-card--featured, .testimonial-card--wide { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
   .testimonials-grid { grid-template-columns: 1fr; }
