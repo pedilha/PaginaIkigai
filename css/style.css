@@ -445,29 +445,32 @@ select { appearance: none; }
 .hero--photo .hero__noise { z-index: 2; }
 .hero--photo .hero__content { z-index: 3; }
 
-/* Left-anchored variant: for a frame where the subject sits dead centre
-   and a centred block would run type straight across their face — pin the
-   content to the open side instead of fighting the composition. */
-.hero--photo-left {
+/* Right-anchored variant: the subject (phone in hand) sits left-of-centre
+   in this frame, so the text pins to the open right side instead of
+   covering it. Sized up from the standard left variant — roomier column,
+   taller type — so the block reads as a real half of the screen. */
+.hero--photo-right {
   justify-content: center;
+  align-items: flex-end;
   padding-block: calc(var(--header-h) + var(--space-md)) var(--space-md);
 }
-.hero--photo-left .hero__content { margin-inline: 0; text-align: left; max-width: 460px; }
-.hero--photo-left .hero__cta { justify-content: flex-start; }
+.hero--photo-right .hero__content { margin-inline: 0; text-align: left; max-width: 560px; }
+.hero--photo-right .hero__cta { justify-content: flex-start; }
 /* This frame's subject and the sign's lettering both sit in the top half —
    the shared 62% default crops toward the bottom, which would cut into
    both of them, so pull the crop back up toward the top instead. */
-.hero--photo-left .hero__photo { object-position: 50% 65%; }
+.hero--photo-right .hero__photo { object-position: 50% 65%; }
 /* Type answers to viewport HEIGHT as well as width, same reasoning as
-   .hero--photo-centered — a long headline in a narrow (480px) column
-   wraps to several lines, and at the default hero size that alone can run
-   past one screen. */
-.hero--photo-left .hero__headline { font-size: min(var(--text-2xl), 8.5vh); }
-.hero--photo-left .hero__sub { font-size: min(var(--text-sm), 3.1vh); }
+   .hero--photo-centered — a long headline in a narrow column wraps to
+   several lines, and at the default hero size that alone can run past
+   one screen. Capped taller than the left variant so the block occupies
+   roughly half the viewport height. */
+.hero--photo-right .hero__headline { font-size: min(var(--text-2xl), 12vh); }
+.hero--photo-right .hero__sub { font-size: min(var(--text-base), 4.5vh); }
 /* Solid near the text, gone by the point the subject starts — darkens the
-   open (left) side of the frame without touching the subject at all. */
-.hero__scrim.hero__scrim--left {
-  background: linear-gradient(to right,
+   open (right) side of the frame without touching the subject on the left. */
+.hero__scrim.hero__scrim--right {
+  background: linear-gradient(to left,
     oklch(0.12 0.008 50 / 0.7) 0%,
     oklch(0.12 0.008 50 / 0.55) 32%,
     transparent 48%);
@@ -1169,9 +1172,10 @@ select { appearance: none; }
   /* The left/right split only works with room to breathe — on a narrow
      screen the crop tightens onto the subject and there's no clear side
      left for type, so fall back to centred text over a flat, even wash. */
-  .hero--photo-left .hero__content { text-align: center; max-width: 100%; }
-  .hero--photo-left .hero__cta { justify-content: center; }
-  .hero__scrim.hero__scrim--left { background: oklch(0.12 0.008 50 / 0.68); }
+  .hero--photo-right { align-items: center; }
+  .hero--photo-right .hero__content { text-align: center; max-width: 100%; }
+  .hero--photo-right .hero__cta { justify-content: center; }
+  .hero__scrim.hero__scrim--right { background: oklch(0.12 0.008 50 / 0.68); }
   /* The fixed-34vh anchor is a desktop fix for a wide/short crop problem —
      on mobile the crop is vertical (full width, cropped top/bottom) and
      the generic centred flow above already keeps content clear. */
