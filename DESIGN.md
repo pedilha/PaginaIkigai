@@ -175,11 +175,13 @@ O sistema é predominantemente flat. Profundidade é comunicada por cor (dark �
 - **Hover:** Background sutil (`oklch(0.18 0.01 50)`), padding expande, número fica a 40%, descrição revela-se de `max-height: 0`, texto "Ver mais" surge com slide-in.
 - **Seta:** Círculo 48px, Ember Orange sólido. Hover: rotação -45deg + scale 1.08 + glow.
 
-### Fan Carousel (Depoimentos)
-- **Cards:** Background `{colors.midnight-card}`, radius 20px, padding `{spacing.md}`. Dispostos em leque com rotação e escala decrescentes do centro.
-- **Foto:** `aspect-ratio: 4/3`, `object-fit: cover`, radius 12px.
+### Testimonials Grid (Depoimentos)
+- **Layout:** Grid bento de 3 colunas, sem carrossel/JS de navegação. Um card em destaque (o depoimento mais longo) ocupa 2 colunas; um par de depoimentos curtos empilha numa única célula (`.testimonial-stack`) para igualar a altura de um vizinho mais alto.
+- **Cards:** Background `{colors.midnight-card}`, radius 20px, padding `{spacing.md}`. Altura de conteúdo (não uniforme/forçada). Avatar + nome/@ + serviço ficam numa linha só, ancorados ao rodapé do card via `margin-top: auto`.
+- **Avatar:** 44px, circular, borda Ember Orange.
 - **Quote:** Literata italic, aspas tipográficas em Ember Orange como `::before`.
-- **Navegação:** Botões circulares 44px com border e backdrop-blur. Dots com escala animada no ativo.
+- **Reveal:** Mesmo scroll-reveal do resto do site, com blur de entrada adicional (`filter: blur(6px)` → `blur(0)`) exclusivo desses cards.
+- **Responsivo:** 2 colunas ≤900px, 1 coluna ≤640px.
 
 ### Project Stack (Projetos Selecionados)
 - **Layout:** Cards `position: sticky` no mesmo offset (`top: var(--header-h)`), empilhando conforme o scroll — cada novo card cobre o anterior. Sem JS, puro CSS.
