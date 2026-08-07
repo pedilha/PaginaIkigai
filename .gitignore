@@ -1,0 +1,12 @@
+# Editor / IDE
+.idea/
+.vscode/
+
+# Internal tooling (Claude Code / impeccable skill) — local dev config and
+# design-critique artifacts, not meant for the published repo
+.claude/
+.impeccable/
+
+# OS
+.DS_Store
+Thumbs.db
