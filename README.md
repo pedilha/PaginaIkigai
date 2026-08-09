@@ -31,6 +31,17 @@ Construído com HTML, CSS e JavaScript puros, sem framework e sem processo de bu
 
 Sistema de cores em OKLCH, tipografia editorial (Literata para títulos, Manrope para o corpo), paleta dark-premium com laranja brasa reservado para ações e afirmações. Documentado em [`DESIGN.md`](DESIGN.md) e [`PRODUCT.md`](PRODUCT.md).
 
+## SEO
+
+- **`sitemap.xml`**: lista as 4 páginas do site para os buscadores.
+- **`robots.txt`**: libera o rastreamento e aponta para o sitemap.
+- **`llms.txt`**: resumo estruturado do site (serviços, páginas, contato) no [padrão emergente](https://llmstxt.org/) para IAs generativas.
+- **Dados estruturados (JSON-LD)**: schema `MarketingAgency` no `<head>` das 4 páginas, com nome, descrição, contato e lista de serviços.
+- **Meta tags**: `title`, `description`, `keywords`, `canonical` e Open Graph configurados em todas as páginas.
+- **Google Search Console**: ainda não verificado — pendente de configuração.
+
+Limitação conhecida: o conteúdo em inglês e italiano é trocado via JavaScript na mesma URL (sem rotas por idioma nem `hreflang`), então os buscadores só indexam a versão em português.
+
 ## Estrutura
 
 ```
@@ -44,6 +55,9 @@ Sistema de cores em OKLCH, tipografia editorial (Literata para títulos, Manrope
 │   └── i18n.js           # Sistema de tradução
 ├── i18n/                 # Traduções (pt/en/it)
 ├── assets/                # Imagens e ícones
+├── sitemap.xml            # Mapa do site para buscadores
+├── robots.txt             # Regras de rastreamento
+├── llms.txt               # Resumo do site para IAs
 ├── DESIGN.md              # Design system
 └── PRODUCT.md             # Contexto de produto e marca
 ```
