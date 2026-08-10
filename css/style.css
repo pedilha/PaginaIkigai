@@ -1120,6 +1120,18 @@ select { appearance: none; }
 .info-card__title { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-sm); }
 .info-card__text { color: var(--text-muted); font-size: var(--text-sm); margin-bottom: var(--space-md); line-height: 1.6; }
 
+/* ===== COOKIE CONSENT ===== */
+.cookie-consent {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: var(--z-modal);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm);
+  background: var(--dark-card); border-top: 1px solid var(--border-dark);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: 0 -8px 30px oklch(0.08 0.01 50 / 0.3);
+}
+.cookie-consent__text { font-size: var(--text-xs); color: var(--text-muted); max-width: 60ch; }
+.cookie-consent__actions { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.cookie-consent .btn { padding: 0.6rem 1.4rem; }
+
 /* ===== FOOTER ===== */
 .footer { background: var(--orange); color: var(--dark); padding: var(--space-xl) var(--space-md) var(--space-md); }
 .footer__grid { max-width: var(--max-w); margin-inline: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
