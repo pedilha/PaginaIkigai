@@ -19,7 +19,6 @@
   document.body.classList.add('intro-active');
 
   const video = overlay.querySelector('video');
-  const skipBtn = overlay.querySelector('.intro-overlay__skip');
   let dismissed = false;
 
   function dismiss() {
@@ -33,7 +32,6 @@
   }
 
   video?.addEventListener('ended', dismiss);
-  skipBtn?.addEventListener('click', dismiss);
 
   // Autoplay can be blocked by the browser, or the video can fail to load —
   // never trap the visitor behind the overlay waiting for an event that
