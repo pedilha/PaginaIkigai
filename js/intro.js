@@ -19,6 +19,14 @@
   document.body.classList.add('intro-active');
 
   const video = overlay.querySelector('video');
+  // <source media="..."> inside <video> isn't reliably honored across real
+  // mobile browsers the way it is for <picture> — pick the file explicitly
+  // in JS instead, which every browser handles the same way.
+  if (video) {
+    const isMobile = window.matchMedia('(max-width: 700px)').matches;
+    video.src = isMobile ? video.dataset.srcMobile : video.dataset.srcDesktop;
+    video.load();
+  }
   let dismissed = false;
 
   function dismiss() {
