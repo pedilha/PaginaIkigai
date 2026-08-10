@@ -1,9 +1,8 @@
 (() => {
   'use strict';
 
-  // TODO: substituir pelos IDs reais assim que as contas forem criadas.
-  const GA4_ID = 'G-XXXXXXXXXX';
-  const CLARITY_ID = 'XXXXXXXXXX';
+  const GA4_ID = 'G-9095BS1DZT';
+  const CLARITY_ID = 'y08hbgvs3z';
 
   const STORAGE_KEY = 'ikigai-cookie-consent';
 
