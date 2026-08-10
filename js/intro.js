@@ -26,6 +26,11 @@
     const isMobile = window.matchMedia('(max-width: 700px)').matches;
     video.src = isMobile ? video.dataset.srcMobile : video.dataset.srcDesktop;
     video.load();
+    // Setting .src via script doesn't reliably re-trigger the autoplay
+    // attribute's built-in behavior on iOS Safari — has to call .play()
+    // explicitly. If it's still rejected for some other reason, just skip
+    // straight to dismissing instead of leaving a paused video on screen.
+    video.play().catch(() => dismiss());
   }
   let dismissed = false;
 
