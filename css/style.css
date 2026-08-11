@@ -1254,7 +1254,18 @@ body.intro-active { overflow: hidden; }
   .hero--photo-centered .hero__content { position: static; top: auto; left: auto; transform: none; width: auto; }
   .hero--page .hero__content { padding-top: 0; }
   .hero--page .hero__headline { margin-bottom: var(--space-sm); }
-  .hero__circle--1, .hero__circle--2, .hero__circle--3 { width: 300px; height: 300px; }
+  .hero__circle--1, .hero__circle--2, .hero__circle--3 { width: 300px; height: 300px; animation: none; }
+  /* blur() cost scales with radius; 120px/80px over a full-viewport layer is
+     cheap on desktop GPUs but pegs the compositor on mid/low-end phones,
+     right in the hero's first paint. Shrink it instead of dropping the glow. */
+  .hero__glow::before { filter: blur(40px); }
+  .hero__glow::after { filter: blur(28px); }
+  /* If the main-thread is busy (hero paint, JSON fetch, whatever), the
+     scroll-reveal below can lag behind the user's scroll position and sit
+     stuck at opacity:0, reading as "content didn't load". Starting higher
+     makes that stuck state readable instead of a blank gap — desktop keeps
+     the full 0→1 fade untouched. */
+  .reveal, .reveal-left, .reveal-right { opacity: 0.6; }
   .hero__headline { font-size: var(--text-3xl); }
   .hero__scroll { display: none; }
   .service-item { grid-template-columns: auto 1fr auto; gap: var(--space-sm); }

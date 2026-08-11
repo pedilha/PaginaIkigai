@@ -35,6 +35,23 @@
         });
       }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
       els.forEach(el => io.observe(el));
+
+      // Safety net, mobile only: if the observer's callback lags behind the
+      // user's scroll (main thread busy elsewhere), an element can already
+      // be on-screen and still sit stuck at opacity:0/0.6. After a short
+      // delay, force-reveal anything that's already on or past screen —
+      // sections still below the fold are left alone, so the scroll-reveal
+      // effect itself is untouched either way.
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        setTimeout(() => {
+          els.forEach(el => {
+            if (!el.classList.contains('visible') && el.getBoundingClientRect().top < window.innerHeight) {
+              el.classList.add('visible');
+              io.unobserve(el);
+            }
+          });
+        }, 1500);
+      }
     }
 
     // [data-loop] elements animate back out on the way past too, instead

@@ -55,7 +55,7 @@
 
   <!-- INTRO (teste) -->
   <div class="intro-overlay" id="intro-overlay">
-    <video class="intro-overlay__video" autoplay muted playsinline
+    <video class="intro-overlay__video" autoplay muted playsinline fetchpriority="low"
            data-src-desktop="assets/intro.mp4" data-src-mobile="assets/intro-mobile.mp4">
     </video>
   </div>
@@ -578,9 +578,9 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/consent.js"></script>
-  <script src="js/intro.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/consent.js" defer></script>
+  <script src="js/intro.js" defer></script>
 </body>
 </html>
