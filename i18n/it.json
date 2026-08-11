@@ -25,7 +25,7 @@
   "services.6.name": "Branding Completo",
   "services.7.name": "Progetti Personalizzati",
 
-  "footer.tagline": "Il nostro motto è: Guardare oltre la finestra. Creare con autenticità. Impattare con scopo.",
+  "footer.tagline": "Il nostro motto è: Guardare oltre la finestra. Creare con autenticità. Lasciare il segno.",
   "footer.rightsSuffix": "Agência Ikigai. Tutti i diritti riservati.",
   "footer.made": "Fatto con scopo.",
   "footer.devCredit": "Sviluppato da <a href=\"mailto:pedrowilian13@gmail.com\">pedrowilian13@gmail.com</a>",
@@ -44,7 +44,7 @@
   "home.intro.link": "Scopri Ikigai",
 
   "home.audience.title": "Per brand che sanno di avere qualcosa di speciale, ma devono comunicarlo con chiarezza.",
-  "home.audience.text1": "Lavoriamo con imprenditrici, brand personali, aziende di servizi e attività che vogliono crescere senza perdere la propria essenza.",
+  "home.audience.text1": "Lavoriamo con imprenditori, brand personali, aziende di servizi e attività che vogliono crescere senza perdere la propria essenza.",
   "home.audience.text2": "Brand che non vogliono solo apparire, ma costruire significato, riconoscimento e connessione.",
   "home.audience.1.title": "Per chi sta iniziando",
   "home.audience.1.text": "E ha bisogno di costruire un brand con una direzione fin dall'inizio.",
@@ -61,7 +61,7 @@
   "home.services.3.desc": "Trasformiamo eventi, lanci, viaggi ed esperienze in storie strategiche, prodotte e pubblicate in tempo reale.",
   "home.services.4.name": "Analisi del Profilo",
   "home.services.4.desc": "Un incontro strategico per identificare disallineamenti, opportunità e i prossimi passi per rafforzare la tua presenza digitale.",
-  "home.services.5.desc": "Mappiamo essenza, scopo, punti di differenza e posizionamento per creare una direzione chiara prima di comunicare, crescere o riposizionarsi.",
+  "home.services.5.desc": "Mappiamo essenza, scopo, tratti distintivi e posizionamento per creare una direzione chiara prima di comunicare, crescere o riposizionarsi.",
   "home.services.6.desc": "Costruiamo brand da zero, unendo strategia, naming e identità visiva per creare una presenza con scopo e personalità.",
   "home.services.7.desc": "Siti, cataloghi, presentazioni, e-book e materiali per lanci o eventi, sviluppati in base alle necessità del tuo brand.",
 
@@ -179,7 +179,7 @@
   "about.closing.text2": "È da questa essenza che nascono le strategie, i contenuti, le narrazioni e le esperienze che creiamo. Perché un brand può anche attirare l'attenzione con l'estetica, ma è la verità che c'è dietro a far sì che qualcuno rimanga.",
   "about.closing.mantra": "Il nostro scopo è accendere il tuo scopo.",
 
-  "services.hero.headline": "Strategia, creatività e <em>scopo</em> in ogni punto di contatto",
+  "services.hero.headline": "Strategia, creatività e <em>proposito</em> in ogni punto di contatto",
   "services.hero.sub": "Ogni brand ha un'essenza, una storia, un momento e obiettivi diversi. Per questo le nostre soluzioni sono costruite su misura, a partire da ciò che rende unica ogni attività.",
   "services.hero.photoAlt": "Donna che sorride guardando il telefono, davanti a un pannello colorato con calligrafia giapponese",
 
@@ -197,7 +197,7 @@
   "services.1.item.2": "Ricerca di mercato, pubblico e riferimenti",
   "services.1.item.3": "Definizione dei pilastri editoriali",
   "services.1.item.4": "Calendario mensile",
-  "services.1.item.5": "Creazione dei temi",
+  "services.1.item.5": "Creazione di temi",
   "services.1.item.6": "Sceneggiatura",
   "services.1.item.7": "Copywriting",
   "services.1.item.8": "Design dei contenuti",
@@ -312,7 +312,7 @@
   "services.6.group.1.item.1": "Scopo",
   "services.6.group.1.item.2": "Valori",
   "services.6.group.1.item.3": "Pubblico",
-  "services.6.group.1.item.4": "Punti di differenza",
+  "services.6.group.1.item.4": "tratti distintivi",
   "services.6.group.1.item.5": "Posizionamento",
   "services.6.group.1.item.6": "Proposta di valore",
   "services.6.group.1.item.7": "Messaggio",
