@@ -193,11 +193,13 @@
   });
 
   // ===== ACTIVE NAV =====
-  const path = window.location.pathname;
+  // Pages link to each other via clean paths ("quem-somos", not
+  // "quem-somos.html") since GitHub Pages serves both; stripping .html here
+  // keeps this working if a visitor lands on the old-style URL directly.
+  const path = window.location.pathname.replace(/\.html$/, '');
   document.querySelectorAll('.nav a, .mobile-nav a').forEach(a => {
     const href = a.getAttribute('href');
-    if (path.endsWith(href) || (href === 'index.html' && (path.endsWith('/') || path.endsWith('index.html')))) {
-      a.classList.add('active');
-    }
+    const isActive = href === '/' ? (path === '/' || path === '') : path.endsWith(href);
+    if (isActive) a.classList.add('active');
   });
 })();
