@@ -1260,12 +1260,6 @@ body.intro-active { overflow: hidden; }
      right in the hero's first paint. Shrink it instead of dropping the glow. */
   .hero__glow::before { filter: blur(40px); }
   .hero__glow::after { filter: blur(28px); }
-  /* If the main-thread is busy (hero paint, JSON fetch, whatever), the
-     scroll-reveal below can lag behind the user's scroll position and sit
-     stuck at opacity:0, reading as "content didn't load". Starting higher
-     makes that stuck state readable instead of a blank gap — desktop keeps
-     the full 0→1 fade untouched. */
-  .reveal, .reveal-left, .reveal-right { opacity: 0.6; }
   .hero__headline { font-size: var(--text-3xl); }
   .hero__scroll { display: none; }
   .service-item { grid-template-columns: auto 1fr auto; gap: var(--space-sm); }
