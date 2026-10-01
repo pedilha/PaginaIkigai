@@ -5,6 +5,14 @@
   const SUPPORTED = ['pt', 'en', 'it'];
   const cache = {};
 
+  // Pasta i18n/ resolvida a partir deste arquivo (js/i18n.js), não da URL da
+  // página: a 404 é servida pelo GitHub Pages em qualquer caminho
+  // (ex.: /blog/post-antigo), onde "./i18n/" apontaria para o lugar errado.
+  const scriptSrc = document.currentScript && document.currentScript.src;
+  const I18N_BASE = scriptSrc
+    ? new URL('../i18n/', scriptSrc).href
+    : window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1) + 'i18n/';
+
   function getSavedLang() {
     try { return localStorage.getItem('ikigai-lang') || DEFAULT_LANG; }
     catch { return DEFAULT_LANG; }
@@ -17,8 +25,7 @@
   async function loadTranslations(lang) {
     if (cache[lang]) return cache[lang];
     try {
-      const base = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-      const res = await fetch(base + 'i18n/' + lang + '.json');
+      const res = await fetch(I18N_BASE + lang + '.json');
       if (!res.ok) return null;
       cache[lang] = await res.json();
       return cache[lang];
