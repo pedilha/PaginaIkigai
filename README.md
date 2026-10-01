@@ -86,4 +86,4 @@ Projeto real de cliente, publicado aqui como peça de portfólio. Não é um tem
 
 ---
 
-Desenvolvido por [Pedro Wilian](mailto:pedrowilian13@gmail.com)
+Desenvolvido por [Pedro Willian](https://www.linkedin.com/in/pedro-willian-moraes-louren%C3%A7o-121030289/)
