@@ -407,6 +407,14 @@ select { appearance: none; }
 .hero--page .hero__content { max-width: 1000px; }
 .hero__headline--sm { font-size: var(--text-3xl); }
 
+/* ===== HERO — PÁGINA 404 ===== */
+/* Rótulo acima do título, no estilo "label" do DESIGN.md */
+.hero__kicker {
+  font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: var(--space-sm);
+}
+.hero--not-found .hero__sub { margin-bottom: var(--space-md); }
+
 /* ===== HERO WITH PHOTO ===== */
 /* The two figures are dead centre horizontally, and a wide box crops the 3:2
    photo vertically only — so they can't be nudged sideways. The type is

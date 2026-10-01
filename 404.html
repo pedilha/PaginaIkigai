@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Página de erro 404. O GitHub Pages serve este arquivo para qualquer
+    endereço inexistente, NO PRÓPRIO endereço pedido (ex.: /blog/post-antigo).
+    Por isso todos os links e arquivos aqui usam caminho absoluto (/css/...,
+    /assets/..., /contato): caminhos relativos quebrariam em URLs com pastas.
+  -->
+  <meta name="description" content="Página não encontrada. Volte para o início ou fale com a Agência Ikigai.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#D96E30">
+
+  <title>Página não encontrada — Agência Ikigai</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/logo_favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/literata-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skipToContent">Pular para o conteúdo</a>
+
+  <header class="header" role="banner">
+    <a href="/" class="logo" aria-label="Ikigai - Página inicial">
+      <img src="/assets/logo_header.png" alt="Agência Ikigai" class="logo__img" width="1472" height="342">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="/" data-i18n="nav.home">Home</a>
+      <a href="/quem-somos" data-i18n="nav.about">Quem Somos</a>
+      <a href="/servicos" data-i18n="nav.services">Serviços</a>
+      <a href="/contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n="a11y.language" data-i18n-attr="aria-label">
+      <button type="button" class="lang-switch__btn active" data-lang="pt" lang="pt-BR" aria-label="Português" aria-pressed="true">PT</button>
+      <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" class="lang-switch__btn" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="false">IT</button>
+    </div>
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-nav" role="dialog" aria-label="Menu de navegação">
+    <a href="/" data-i18n="nav.home">Home</a>
+    <a href="/quem-somos" data-i18n="nav.about">Quem Somos</a>
+    <a href="/servicos" data-i18n="nav.services">Serviços</a>
+    <a href="/contato" data-i18n="nav.contact">Contato</a>
+  </div>
+
+  <!-- HERO (mesmo fundo animado da Home) -->
+  <section id="main-content" class="hero hero--not-found section--dark">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__circles" aria-hidden="true">
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+      <div class="hero__circle hero__circle--3"></div>
+    </div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__noise" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__kicker" data-i18n="notFound.label">Erro 404</p>
+      <h1 class="hero__headline" data-i18n-html="notFound.headline">Esta página saiu pela <em>janela</em>.</h1>
+      <p class="hero__sub" data-i18n="notFound.text">O endereço que você tentou acessar não existe ou mudou de lugar. O resto da Ikigai continua aqui.</p>
+      <div class="hero__cta">
+        <a href="/" class="btn btn--orange" data-i18n="notFound.home">Voltar para o início</a>
+        <a href="https://api.whatsapp.com/send?phone=5562991542722&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__tagline" data-i18n="footer.tagline">O nosso lema é: Olhar pra fora da janela. Criar com autenticidade. Impactar com propósito.</p>
+        <div class="footer__contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>
+          <span>+55 62 99154-2722</span>
+        </div>
+        <div class="footer__contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons.svg#email"/></svg>
+          <span>contato@ikigaiagencia.com</span>
+        </div>
+      </div>
+      <div class="footer__actions">
+        <a href="https://api.whatsapp.com/send?phone=5562991542722&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ikigai!" class="btn btn--outline" target="_blank" rel="noopener" data-i18n="cta.talk">Fale com a gente</a>
+        <a href="/contato" class="btn btn--outline" data-i18n="cta.quote">Solicite um orçamento</a>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/agencia.ikigai/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/assets/icons.svg#instagram"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ikigai-ag%C3%AAncia/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="/assets/icons.svg#linkedin"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="copyright-year"></span> <span data-i18n="footer.rightsSuffix">Agência Ikigai. Todos os direitos reservados.</span></span>
+      <span data-i18n="footer.made">Feito com propósito.</span>
+      <span data-i18n-html="footer.devCredit">Desenvolvido por <a href="https://www.linkedin.com/in/pedro-willian-moraes-louren%C3%A7o-121030289/" target="_blank" rel="noopener">Pedro Willian</a></span>
+    </div>
+  </footer>
+
+  <div class="cookie-consent" hidden>
+    <p class="cookie-consent__text" data-i18n="cookieConsent.text">Usamos cookies e ferramentas de análise para entender como você usa o site e melhorar sua experiência.</p>
+    <div class="cookie-consent__actions">
+      <button type="button" class="btn btn--outline cookie-consent__decline" data-i18n="cookieConsent.decline">Recusar</button>
+      <button type="button" class="btn btn--orange cookie-consent__accept" data-i18n="cookieConsent.accept">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/consent.js" defer></script>
+</body>
+</html>

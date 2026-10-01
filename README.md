@@ -52,6 +52,7 @@ Limitação conhecida: o conteúdo em inglês e italiano é trocado via JavaScri
 ├── quem-somos.html       # Sobre / equipe
 ├── servicos.html         # Serviços
 ├── contato.html          # Contato (formulário)
+├── 404.html              # Página de erro (servida pelo GitHub Pages em qualquer URL inexistente)
 ├── css/style.css         # Estilos e design tokens
 ├── js/
 │   ├── main.js           # Interações, animações, formulário

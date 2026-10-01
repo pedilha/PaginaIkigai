@@ -391,5 +391,10 @@
   "contact.sidebar.whatsapp.title": "Prefere conversar direto?",
   "contact.sidebar.whatsapp.text": "Se preferir, entre em contato diretamente pelo WhatsApp. Respondemos rápido.",
   "contact.sidebar.whatsapp.cta": "Fale pelo WhatsApp",
-  "contact.sidebar.info.title": "Informações de contato"
+  "contact.sidebar.info.title": "Informações de contato",
+
+  "notFound.label": "Erro 404",
+  "notFound.headline": "Esta página saiu pela <em>janela</em>.",
+  "notFound.text": "O endereço que você tentou acessar não existe ou mudou de lugar. O resto da Ikigai continua aqui.",
+  "notFound.home": "Voltar para o início"
 }
