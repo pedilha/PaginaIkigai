@@ -994,7 +994,11 @@ select { appearance: none; }
   padding: 0.875rem 1rem; border-radius: var(--r-sm);
   border: 1.5px solid var(--border-warm); background: var(--cream); color: var(--text-on-warm);
   outline: none; transition: border-color 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+  /* Sem isto o <select> fica da largura da opção mais longa ("Análise de
+     Perfil e Diagnóstico Digital") e alarga a coluna: rolagem lateral em 320px. */
+  width: 100%; min-width: 0;
 }
+.form__select { text-overflow: ellipsis; }
 .form__input:focus, .form__textarea:focus, .form__select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-glow); }
 .form__input::placeholder, .form__textarea::placeholder { color: oklch(0.6 0.005 50); }
 .form__textarea { resize: vertical; min-height: 140px; }
@@ -1202,6 +1206,9 @@ body.intro-active { overflow: hidden; }
 @media (max-width: 1024px) {
   .service-detail { grid-template-columns: 1fr; gap: var(--space-md); }
   .service-detail--flip { direction: ltr; }
+  /* contato: o formulário divide a tela com o card lateral até 768px; com
+     campos lado a lado, os placeholders ficavam cortados */
+  .form__row { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav { display: none; }
