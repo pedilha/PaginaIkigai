@@ -1,0 +1,10 @@
+# Normaliza quebras de linha: LF no repositório e no checkout, em qualquer SO.
+* text=auto eol=lf
+
+# Binários: nunca converter
+*.png  binary
+*.jpg  binary
+*.webp binary
+*.mp4  binary
+*.woff2 binary
+*.pdf  binary
