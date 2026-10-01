@@ -650,7 +650,7 @@ select { appearance: none; }
   box-shadow: 0 6px 24px var(--orange-glow);
 }
 .service-item__arrow svg {
-  width: 18px; height: 18px; stroke: var(--dark); stroke-width: 2;
+  width: 18px; height: 18px; stroke: var(--dark); stroke-width: 1.5;
 }
 .service-item:active .service-item__arrow {
   transform: rotate(-45deg) scale(0.96);
@@ -844,7 +844,7 @@ select { appearance: none; }
   background: var(--orange); display: grid; place-items: center;
   transition: transform 0.5s var(--ease-out), box-shadow 0.4s var(--ease-smooth);
 }
-.founder-card__cta svg { width: 20px; height: 20px; stroke: var(--dark); stroke-width: 2; }
+.founder-card__cta svg { width: 20px; height: 20px; stroke: var(--dark); stroke-width: 1.5; }
 .founder-card:hover .founder-card__cta { transform: rotate(-45deg) scale(1.08); box-shadow: 0 6px 24px var(--orange-glow); }
 .founder-card__cta:active { transform: rotate(-45deg) scale(0.96); }
 .founder-card__cta:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
@@ -1083,7 +1083,7 @@ select { appearance: none; }
   background: var(--orange); display: grid; place-items: center;
   transition: transform 0.5s var(--ease-out), box-shadow 0.4s var(--ease-smooth);
 }
-.project-card__social svg { width: 20px; height: 20px; stroke: var(--dark); stroke-width: 2; }
+.project-card__social svg { width: 20px; height: 20px; stroke: var(--dark); stroke-width: 1.5; }
 .project-card__social:hover { transform: scale(1.08); box-shadow: 0 6px 24px var(--orange-glow); }
 .project-card__social:active { transform: scale(0.96); }
 .project-card__social:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
