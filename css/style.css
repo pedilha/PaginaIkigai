@@ -168,9 +168,11 @@ select { appearance: none; }
    corner instead of letting it centre with the rest of the menu. */
 .header .lang-switch { justify-self: end; }
 .lang-switch__btn {
-  font-family: var(--font-body); font-size: 0.65rem; font-weight: 600;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 0.3rem 0.55rem; border-radius: var(--r-pill);
+  /* alvo de toque de 36px (antes ~27x22): o site é acessado muito pelo celular */
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 36px; min-height: 36px; padding: 0 0.6rem; border-radius: var(--r-pill);
   color: var(--text-muted); cursor: pointer;
   transition: all 0.3s var(--ease-smooth);
   border: none; background: none;
@@ -1228,7 +1230,7 @@ body.intro-active { overflow: hidden; }
   .header { display: flex; justify-content: space-between; gap: var(--space-sm); }
   .logo { flex-shrink: 0; }
   .lang-switch { order: 2; margin-left: auto; }
-  .hamburger { order: 3; }
+  .hamburger { order: 3; flex-shrink: 0; } /* nunca espremer o botão de menu */
   .hero { height: auto; min-height: 100vh; min-height: 100dvh; align-items: center; justify-content: center; }
   .hero__content { text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 30vh; }
   .hero__headline { margin-bottom: 10vh; }
@@ -1276,11 +1278,16 @@ body.intro-active { overflow: hidden; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 @media (max-width: 480px) {
-  .lang-switch__btn { font-size: 0.6rem; padding: 0.25rem 0.45rem; }
+  .lang-switch__btn { font-size: 0.65rem; min-width: 34px; min-height: 34px; padding: 0 0.5rem; }
   .hero__headline { font-size: var(--text-2xl); }
   .hero__cta { flex-direction: column; align-items: center; }
   .hero__cta .btn { width: 100%; justify-content: center; }
   .service-item__num .service-item__icon { display: none; }
+}
+
+@media (max-width: 360px) {
+  /* logo + seletor de idioma (alvos de 34px) + menu precisam caber em 320px */
+  .logo__img { height: 26px; }
 }
 
 /* ===== REDUCED MOTION ===== */

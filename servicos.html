@@ -61,10 +61,10 @@
       <a href="servicos" class="active" data-i18n="nav.services">Serviços</a>
       <a href="contato" data-i18n="nav.contact">Contato</a>
     </nav>
-    <div class="lang-switch">
-      <button class="lang-switch__btn active" data-lang="pt">PT</button>
-      <button class="lang-switch__btn" data-lang="en">EN</button>
-      <button class="lang-switch__btn" data-lang="it">IT</button>
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n="a11y.language" data-i18n-attr="aria-label">
+      <button type="button" class="lang-switch__btn active" data-lang="pt" lang="pt-BR" aria-label="Português" aria-pressed="true">PT</button>
+      <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" class="lang-switch__btn" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="false">IT</button>
     </div>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>

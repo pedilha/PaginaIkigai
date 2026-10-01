@@ -57,7 +57,9 @@
 
   function updateSwitcher(lang) {
     document.querySelectorAll('.lang-switch__btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+      const active = btn.dataset.lang === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
     });
   }
 
