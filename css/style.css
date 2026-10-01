@@ -224,6 +224,7 @@ select { appearance: none; }
 .btn--outline:hover { background: var(--text-on-dark); color: var(--dark); transform: translateY(-2px); }
 .btn--outline-dark { border: 1.5px solid var(--text-on-warm); color: var(--text-on-warm); }
 .btn--outline-dark:hover { background: var(--text-on-warm); color: var(--warm); transform: translateY(-2px); }
+.btn--block { width: 100%; justify-content: center; }
 
 /* ===== SECTIONS ===== */
 .section { padding-block: var(--space-xl); }
@@ -874,6 +875,7 @@ select { appearance: none; }
 }
 .section--warm .service-detail { border-color: var(--border-warm); }
 .service-detail:last-child { border-bottom: none; }
+.service-detail--no-border { border-bottom: none; }
 .service-detail--flip { direction: rtl; }
 .service-detail--flip > * { direction: ltr; }
 .service-detail__title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem; text-wrap: balance; }
@@ -930,6 +932,7 @@ select { appearance: none; }
   letter-spacing: 0.1em; color: var(--orange); margin-bottom: 0.35rem;
 }
 .spec-group__note { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+.spec-group__note--spaced { margin-top: 0.75rem; margin-bottom: 0; }
 
 /* "Para quem é" — closing qualifier on each service */
 .audience-note { margin-block: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border-dark); }
@@ -999,6 +1002,7 @@ select { appearance: none; }
 /* Honeypot — invisible to real visitors, present for bots that auto-fill
    every field; Web3Forms rejects the submission server-side if it's set. */
 .form__honeypot { position: absolute; opacity: 0; height: 0; width: 0; pointer-events: none; }
+.form__submit { align-self: flex-start; margin-top: var(--space-xs); }
 .form__submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
 .form__success {
   display: none; padding: var(--space-md); border-radius: var(--r-md);
@@ -1163,6 +1167,8 @@ body.intro-active { overflow: hidden; }
 .footer__social a:hover { background: var(--dark); color: var(--orange); }
 .footer__social a:focus-visible { outline: 2px solid var(--dark); outline-offset: 3px; }
 .footer__social svg { width: 18px; height: 18px; }
+/* variante sobre fundo escuro (card de contato), em vez do laranja do footer */
+.footer__social--muted a { border-color: var(--text-muted); color: var(--text-muted); }
 .footer__bottom {
   max-width: var(--max-w); margin-inline: auto; padding-top: var(--space-md);
   border-top: 1px solid oklch(0.45 0.1 50);
@@ -1284,3 +1290,21 @@ body.intro-active { overflow: hidden; }
   .hero__headline .word { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ===== UTILITIES (overrides) ===== */
+/* Ajustes pontuais de layout usados direto no HTML. Ficam no fim do arquivo
+   de propósito: precisam vencer as regras de componente de mesma
+   especificidade, como o antigo style="" fazia. Valores sempre dos tokens. */
+.text-center    { text-align: center; }
+.text-muted     { color: var(--text-muted); }
+.mx-auto        { margin-inline: auto; }
+.mt-sm          { margin-top: var(--space-sm); }
+.mt-md          { margin-top: var(--space-md); }
+.mt-lg          { margin-top: var(--space-lg); }
+.mb-sm          { margin-bottom: var(--space-sm); }
+.mb-md          { margin-bottom: var(--space-md); }
+.mb-para        { margin-bottom: 0.85em; } /* ritmo entre parágrafos de um mesmo bloco */
+.pt-lg          { padding-top: var(--space-lg); }
+.justify-center { justify-content: center; }
+svg.icon-16      { width: 16px; height: 16px; }
+svg.icon-18      { width: 18px; height: 18px; }
