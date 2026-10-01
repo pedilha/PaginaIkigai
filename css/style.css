@@ -757,9 +757,10 @@ select { appearance: none; }
   background:
     radial-gradient(60px 60px at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.97 0.02 55), transparent 70%),
     radial-gradient(200px 200px at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.68 0.19 55), transparent 70%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* máscara só usa o alfa: qualquer cor opaca serve, então usa um token */
+  -webkit-mask: linear-gradient(var(--dark) 0 0) content-box, linear-gradient(var(--dark) 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(var(--dark) 0 0) content-box, linear-gradient(var(--dark) 0 0);
   mask-composite: exclude;
   opacity: 0; transition: opacity 0.5s var(--ease-smooth);
 }
@@ -1116,7 +1117,7 @@ select { appearance: none; }
 .info-card__title { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-sm); }
 .info-card__text { color: var(--text-muted); font-size: var(--text-sm); margin-bottom: var(--space-md); line-height: 1.6; }
 
-/* ===== INTRO OVERLAY (teste) ===== */
+/* ===== INTRO OVERLAY (vídeo de abertura da Home) ===== */
 /* z-index is a literal above --z-modal (100), not the token itself — the
    header uses --z-modal too, and at equal z-index the later element in DOM
    order (the header, which comes right after this block) wins the paint
