@@ -26,6 +26,9 @@ Construído com HTML, CSS e JavaScript puros, sem framework e sem processo de bu
 - **Animações**: scroll reveal via `IntersectionObserver`, headline com entrada palavra por palavra, marquee, cards com spotlight que segue o cursor — tudo respeitando `prefers-reduced-motion`
 - **Responsivo**: cada seção da página de Serviços foi ajustada para caber numa tela de notebook sem precisar rolar; layout se reorganiza no mobile sem perder hierarquia
 - **Imagens otimizadas**: `.webp` com fallback `.jpg` via `<picture>`, `lazy loading` onde faz sentido
+- **Fontes self-hosted**: Literata e Manrope servidas do próprio domínio (`assets/fonts/`), sem requisições ao Google Fonts
+- **Vídeo de abertura** na Home: toca uma vez por sessão, com versão própria para mobile, e é pulado com `prefers-reduced-motion`
+- **Consentimento de cookies**: GA4 e Microsoft Clarity só carregam depois que o visitante aceita
 
 ## Design
 
@@ -52,25 +55,30 @@ Limitação conhecida: o conteúdo em inglês e italiano é trocado via JavaScri
 ├── css/style.css         # Estilos e design tokens
 ├── js/
 │   ├── main.js           # Interações, animações, formulário
-│   └── i18n.js           # Sistema de tradução
+│   ├── i18n.js           # Sistema de tradução
+│   ├── consent.js        # Banner de cookies + carregamento do GA4/Clarity
+│   └── intro.js          # Vídeo de abertura da Home
 ├── i18n/                 # Traduções (pt/en/it)
-├── assets/                # Imagens e ícones
-├── sitemap.xml            # Mapa do site para buscadores
-├── robots.txt             # Regras de rastreamento
-├── llms.txt               # Resumo do site para IAs
-├── DESIGN.md              # Design system
-└── PRODUCT.md             # Contexto de produto e marca
+├── assets/               # Imagens, vídeos e ícones
+│   └── fonts/            # Literata e Manrope (woff2, self-hosted)
+├── sitemap.xml           # Mapa do site para buscadores
+├── robots.txt            # Regras de rastreamento
+├── llms.txt              # Resumo do site para IAs
+├── CNAME                 # Domínio próprio no GitHub Pages
+├── .gitattributes        # Quebras de linha (LF) e binários
+├── DESIGN.md             # Design system
+└── PRODUCT.md            # Contexto de produto e marca
 ```
 
 ## Rodando localmente
 
-Como não há build step, qualquer servidor estático funciona:
+Não há build step. Use um servidor estático que entenda URLs sem `.html` (os links internos são `/contato`, `/servicos`..., como no GitHub Pages):
 
 ```bash
 npx serve .
 ```
 
-Depois é só abrir `http://localhost:3000`.
+Depois é só abrir `http://localhost:3000`. Evite `http-server`: ele não resolve essas URLs e os links internos dão 404.
 
 ## Sobre este repositório
 
