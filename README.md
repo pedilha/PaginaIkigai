@@ -59,12 +59,13 @@ Limitação conhecida: o conteúdo em inglês e italiano é trocado via JavaScri
 │   ├── consent.js        # Banner de cookies + carregamento do GA4/Clarity
 │   └── intro.js          # Vídeo de abertura da Home
 ├── i18n/                 # Traduções (pt/en/it)
-├── assets/               # Imagens, vídeos e ícones
+├── assets/               # Imagens, vídeos e ícones (icons.svg = sprite dos ícones repetidos)
 │   └── fonts/            # Literata e Manrope (woff2, self-hosted)
 ├── sitemap.xml           # Mapa do site para buscadores
 ├── robots.txt            # Regras de rastreamento
 ├── llms.txt              # Resumo do site para IAs
 ├── CNAME                 # Domínio próprio no GitHub Pages
+├── favicon.ico           # Favicon na raiz (pedido automático dos navegadores)
 ├── .gitattributes        # Quebras de linha (LF) e binários
 ├── DESIGN.md             # Design system
 └── PRODUCT.md            # Contexto de produto e marca
